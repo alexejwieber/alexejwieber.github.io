@@ -259,19 +259,19 @@
             "videos": [
                 {
                     "id": "exp-project-1",
-                    "youtubeId": "Hm41KoRnL9Q", 
+                    "youtubeId": "Hm41KoRnL9Q",
                     "title": "Monuments of Division (2024)",
-                    "description": "..."
+                    "description": "Photography by <a href='https://www.michael-hinz.net/' target='_blank'>Michael Hinz</a>."
                 },
                 {
                     "id": "exp-project-2",
-                    "youtubeId": "JCDqvzKDb3s", 
+                    "youtubeId": "JCDqvzKDb3s",
                     "title": "Panopt/sonicon (2021)",
                     "description": "Among other things this project was inspired by the artificial synchronicity of our perception that is processing our sonic and visual surroundings and how it connects them to an audiovisual experience. Our sonic perception influences the way how we see things and vice versa. Depending on time changes we perceive some phenomena as connected or as serperate on the other hand. Every room in the game explores a slightly different narrative or theme."
                 },
                 {
                     "id": "exp-project-3",
-                    "youtubeId": "6V8D7Eaq1OA", 
+                    "youtubeId": "6V8D7Eaq1OA",
                     "title": "Klanggewebe Iteration II (2018)",
                     "description": "The idea behind this work developed out of the question how visual structures can be transformed into auditive output. Plants grow depending on certain rules and with specific patterns. Following this idea, the growing instructions of Klanggewebe are being algorithmically generated in PureData, which sends this information to the visual software sequencer IanniX. IanniX sends, depending on its appearance structure, data out again to control virtual software instruments, electronic sounds and samples. The sound gets routed between 4 channels in the room, depending on the changing visual focus. The project was realized 2018 in collaboration with Ives Schachtschabel."
                 }
@@ -620,13 +620,13 @@
             youtubeIframe.src = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?vq=hd1080&autoplay=1`;
 
             if (video.galleryType === 'explorative') {
-                modalTitle.textContent = '';
-                modalDescription.textContent = '';
-                modalInfoContainer.style.display = 'none';
+                modalTitle.textContent = video.title || ''; // Set title for explorative videos
+                modalDescription.innerHTML = video.description || ''; // Use innerHTML to render HTML tags in description
+                modalInfoContainer.style.display = 'block';
             } else if (video.galleryType === 'game-audio') {
                 if (video.topicShowText) {
-                    modalTitle.textContent = '';
-                    modalDescription.textContent = video.description || '';
+                    modalTitle.textContent = video.title || ''; // Set title for game audio videos if showText is true
+                    modalDescription.innerHTML = video.description || ''; // Use innerHTML
                     modalInfoContainer.style.display = 'block';
                 } else {
                     modalTitle.textContent = '';
@@ -643,8 +643,8 @@
             modalOverlay.classList.remove('visible');
             document.body.classList.remove('overflow-hidden');
             modalTitle.textContent = '';
-            modalDescription.textContent = '';
-            modalInfoContainer.style.display = 'block';
+            modalDescription.textContent = ''; // Reset with textContent to clear potential HTML
+            modalInfoContainer.style.display = 'block'; // Show info container by default when closed
         }
 
         pageContainer.addEventListener('click', (event) => {
