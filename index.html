@@ -17,66 +17,63 @@
     <div class="site-container">
 
         <nav class="site-nav">
-            <ul>
-                <a href="#home" class="nav-link is-active" data-target="home" id="home-link">Alexej Wieber</a>
+            <a href="#home" class="nav-link is-active" data-target="home" id="home-link">Alexej Wieber</a>
+            
+            <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false" aria-controls="navMenuCollapsible">
+                <svg class="hamburger-icon" viewBox="0 0 100 80" width="28" height="28" fill="var(--text-color)">
+                    <rect width="100" height="15" rx="8"></rect>
+                    <rect y="30" width="100" height="15" rx="8"></rect>
+                    <rect y="60" width="100" height="15" rx="8"></rect>
+                </svg>
+            </button>
 
-                <li class="nav-links-list"> <a href="#game-audio" class="nav-link" data-target="game-audio">Game
-                        Audio</a>
-                    <a href="#explorative" class="nav-link" data-target="explorative">Explorative Sound Design</a>
-                    <a href="#about" class="nav-link" data-target="about">About</a>
-                </li>
-
-                <li class="social-links-list">
-                    <a href="https://www.linkedin.com/in/alexej-wieber-554830226/" target="_blank"
-                        aria-label="LinkedIn Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-linkedin" viewBox="0 0 16 16">
-                            <path
-                                d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
-                        </svg>
-                    </a>
-
-                    <a href="https://www.instagram.com/alexej.wieber/" target="_blank" aria-label="Instagram Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-instagram" viewBox="0 0 16 16">
-                            <path
-                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
-                        </svg>
-                    </a>
-
-                    <a href="https://bsky.app/profile/alexejwieber.bsky.social" target="_blank"
-                        aria-label="BlueSky Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
-                            width="256" height="256" fill="currentColor" viewBox="0 0 256 256" xml:space="preserve">
-                            <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; opacity: 1;"
-                                transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)">
-                                <path
-                                    d="M 19.509 10.712 C 29.827 18.459 40.925 34.165 45 42.594 c 4.075 -8.428 15.173 -24.135 25.492 -31.882 C 77.937 5.123 90 0.798 90 14.56 c 0 2.748 -1.576 23.088 -2.5 26.39 c -3.213 11.48 -14.919 14.408 -25.332 12.636 C 80.37 56.684 85 66.945 75 77.206 c -18.991 19.488 -27.296 -4.89 -29.425 -11.136 c -0.39 -1.145 -0.573 -1.681 -0.575 -1.225 c -0.003 -0.456 -0.185 0.08 -0.575 1.225 c -2.128 6.246 -10.433 30.625 -29.425 11.136 C 5 66.945 9.63 56.683 27.832 53.586 C 17.418 55.358 5.712 52.43 2.5 40.95 C 1.576 37.648 0 17.308 0 14.56 C 0 0.798 12.063 5.123 19.509 10.712 L 19.509 10.712 z"
-                                    style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; opacity: 1;"
-                                    transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
-                            </g>
-                        </svg>
-                    </a>
-
-                    <a href="https://www.youtube.com/@alexejwieber" target="_blank" aria-label="Youtube Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                            class="bi bi-youtube" viewBox="0 0 16 16">
-                            <path
-                                d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
-                        </svg>
-                    </a>
-                </li>
-            </ul>
+            <div class="nav-menu-collapsible" id="navMenuCollapsible">
+                <ul class="nav-links-list">
+                    <li><a href="#game-audio" class="nav-link" data-target="game-audio">Game Audio</a></li>
+                    <li><a href="#explorative" class="nav-link" data-target="explorative">Explorative Sound Design</a></li>
+                    <li><a href="#about" class="nav-link" data-target="about">About</a></li>
+                </ul>
+                <ul class="social-links-list">
+                    <li>
+                        <a href="https://www.linkedin.com/in/alexej-wieber-554830226/" target="_blank" aria-label="LinkedIn Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                                <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.instagram.com/alexej.wieber/" target="_blank" aria-label="Instagram Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
+                                <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334" />
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://bsky.app/profile/alexejwieber.bsky.social" target="_blank" aria-label="BlueSky Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="16" height="16" fill="currentColor" viewBox="0 0 256 256" xml:space="preserve" style="width: 24px; height: 24px;">
+                                <g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; opacity: 1;" transform="scale(2.81 2.81)">
+                                    <path d="M 19.509 10.712 C 29.827 18.459 40.925 34.165 45 42.594 c 4.075 -8.428 15.173 -24.135 25.492 -31.882 C 77.937 5.123 90 0.798 90 14.56 c 0 2.748 -1.576 23.088 -2.5 26.39 c -3.213 11.48 -14.919 14.408 -25.332 12.636 C 80.37 56.684 85 66.945 75 77.206 c -18.991 19.488 -27.296 -4.89 -29.425 -11.136 c -0.39 -1.145 -0.573 -1.681 -0.575 -1.225 c -0.003 -0.456 -0.185 0.08 -0.575 1.225 c -2.128 6.246 -10.433 30.625 -29.425 11.136 C 5 66.945 9.63 56.683 27.832 53.586 C 17.418 55.358 5.712 52.43 2.5 40.95 C 1.576 37.648 0 17.308 0 14.56 C 0 0.798 12.063 5.123 19.509 10.712 L 19.509 10.712 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
+                                </g>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/@alexejwieber" target="_blank" aria-label="Youtube Profile">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-youtube" viewBox="0 0 16 16">
+                                <path d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </nav>
 
         <div class="page-container relative">
             <div id="page-home" class="page active">
                 <h2 class="page-title">Hey, I'm Alexej! (WIP)</h2>
-
                 <div class="about-section-home">
                     <div class="about-text">
-                    
-                    </div>
+                        </div>
                     <div class="about-image">
                         <img src="images/profile_round.png" alt="Alexej Wieber Profile Picture" id="home-profile-image">
                     </div>
@@ -95,85 +92,25 @@
                     As part of my work I also closely collaborated with Audio Programmers to test and develop new audio
                     technology systems like proprietary sound propagation and other third-party spatial audio solutions.
                 </p>
-
-                <div id="video-topics-container"></div>
-
+                <div id="video-topics-container">
+                    </div>
                 <div id="no-results" class="no-results" style="display: none;">
                     No videos found.
                 </div>
-
-                <script type="application/json" id="video-data">
-                    {
-                        "game-trailers": {
-                            "title": "TRAILER WORK",
-                            "showText": false,
-                            "videos": [
-                                { "id": "game-trailer-1", "youtubeId": "G4DG_mKhaZc" },
-                                { "id": "game-trailer-2", "youtubeId": "pwzu-ePX3SE" },
-                                { "id": "game-trailer-3", "youtubeId": "IdCBa40lZuo" },
-                                { "id": "game-trailer-4", "youtubeId": "ToDQ_cZOP7Q" }
-                            ]
-                        },
-                        "ambience-trailers": {
-                            "title": "AMBIENCE CONTRIBUTION",
-                            "showText": false,
-                            "videos": [
-                                { "id": "amb-trailer-1", "youtubeId": "3Nrpz5OFPNg" },
-                                { "id": "amb-trailer-2", "youtubeId": "aLMALbdknu4" },
-                                { "id": "amb-trailer-3", "youtubeId": "ooh5BxMHwhE" }
-                            ]
-                        },
-                        "sound-design-examples": {
-                            "title": "INGAME SOUND DESIGN",
-                            "showText": true,
-                            "videos": [
-                                {
-                                    "id": "sd-example-1", "title": "Colorado Ambience", "youtubeId": "iH0MiWKPqy4",
-                                    "description": "I had the pleasure to design and implement the ambience soundscape for three different times of day on Hunt’s 4th map Mammon's Gulch.They each consist of one main ambisonics bed layer and a number of one- shots triggering at varying times."
-                                },
-                                {
-                                    "id": "sd-example-2", "title": "Weapon: Chu Ko Nu", "youtubeId": "jZSkwPpM40k",
-                                    "description": "This chinese ancient repeating crossbow was an interesting desing challenge because of so little reference material. Besides the main shot, the foley for the different moving parts and the reloading mechanism was especially fun to work on."
-                                },
-                                {
-                                    "id": "sd-example-3", "title": "Trait: Poltergeist", "youtubeId": "CKvGBRxzL-c",
-                                    "description": "A supernatural design for this special ability, which allows the player to interact with objects like doors via Hunt's Darksight remotely."
-                                },
-                                {
-                                    "id": "sd-example-4", "title": "Trait: Blademancer", "youtubeId": "FIL93TBVztg",
-                                    "description": "This trait allows the player to retrieve throwable items from the distance. The supernatural sound design is a combination of a 2D oneshot and a positioned effect on the retrieved object itself."
-                                },
-                                {
-                                    "id": "sd-example-5", "title": "Character Animation", "youtubeId": "1JkaUGANt7Y",
-                                    "description": "A combination of foley and... "
-                                },
-                                {
-                                    "id": "sd-example-6", "title": "Video Ambience Details", "youtubeId": "Z4737DRB6xI",
-                                    "description": "I designed sounds for multiple different ambience... "
-                                },
-                                {
-                                    "id": "sd-example-7", "title": "Cornfield Ambience", "youtubeId": "ln9ZfN21X-k",
-                                    "description": "This ambisonics plays on top of the global map ambience. To make the soundfield slightly positional when standing outside, the spread is connected to the distance in the attenuation."
-                                },
-                                {
-                                    "id": "sd-example-8", "youtubeId": "3C6BPFyQpiU",
-                                    "description": "This ambisonics plays on top of the global map ambience. To make the soundfield slightly positional when standing outside, the spread is connected to the distance in the attenuation."
-                                }
-                            ]
-                        }
-                    }
-                </script>
             </div>
 
             <div id="page-explorative" class="page">
-                <h2 class="page-title">OTHER PROJECTS (WIP)</h2>
-
-
+                <h2 class="page-title">EXPLORATIVE SOUND DESIGN (WIP)</h2>
+                <p>Here are some of my explorative sound design projects. Click on any project to learn more and watch the video.</p>
+                <div id="explorative-video-list-container" class="explorative-video-list">
+                    </div>
+                <div id="no-explorative-results" class="no-results" style="display: none;">
+                    No projects found.
+                </div>
             </div>
 
             <div id="page-about" class="page">
                 <h2 class="page-title">ABOUT (WIP)</h2>
-
                 <div class="about-section-home">
                     <div class="about-text">
                         <p>For a long time now, I have had a deep passion for interactive applications and complex
@@ -197,14 +134,11 @@
                         </p>
                     </div>
                     <div class="about-image">
-                        <img src="images/profile_about.png" alt="Alexej Wieber Profile Picture" id="home-profile-image">
+                        <img src="images/profile_about.png" alt="Alexej Wieber Profile Picture" id="about-profile-image">
                     </div>
                 </div>
-
-
                 <div class="text-container ">
                     <div class="text-list">
-
                         <h3>My favorite audio software:</h3>
                         <ul>
                             <li>Reaper</li>
@@ -215,7 +149,6 @@
                             <li>Kilohearts (especially Phaseplant & Convolver)</li>
                         </ul>
                     </div>
-
                     <div class="text-list">
                         <h3>Highlighted games I love,<br> which also sound amazing:</h3>
                         <ul>
@@ -239,10 +172,8 @@
                         </ul>
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
 
     <footer id="footer">
@@ -268,388 +199,461 @@
             </button>
         </div>
     </div>
+
+    <script type="application/json" id="video-data">
+    {
+        "game-trailers": {
+            "title": "TRAILER WORK",
+            "showText": false,
+            "videos": [
+                { "id": "game-trailer-1", "youtubeId": "G4DG_mKhaZc" },
+                { "id": "game-trailer-2", "youtubeId": "pwzu-ePX3SE" },
+                { "id": "game-trailer-3", "youtubeId": "IdCBa40lZuo" },
+                { "id": "game-trailer-4", "youtubeId": "ToDQ_cZOP7Q" }
+            ]
+        },
+        "ambience-trailers": {
+            "title": "AMBIENCE CONTRIBUTION",
+            "showText": false,
+            "videos": [
+                { "id": "amb-trailer-1", "youtubeId": "3Nrpz5OFPNg" },
+                { "id": "amb-trailer-2", "youtubeId": "aLMALbdknu4" },
+                { "id": "amb-trailer-3", "youtubeId": "ooh5BxMHwhE" }
+            ]
+        },
+        "sound-design-examples": {
+            "title": "INGAME SOUND DESIGN",
+            "showText": true,
+            "videos": [
+                { "id": "sd-example-1", "title": "Colorado Ambience", "youtubeId": "iH0MiWKPqy4", "description": "I had the pleasure to design and implement the ambience soundscape for three different times of day on Hunt’s 4th map Mammon's Gulch.They each consist of one main ambisonics bed layer and a number of one- shots triggering at varying times." },
+                { "id": "sd-example-2", "title": "Weapon: Chu Ko Nu", "youtubeId": "jZSkwPpM40k", "description": "This chinese ancient repeating crossbow was an interesting desing challenge because of so little reference material. Besides the main shot, the foley for the different moving parts and the reloading mechanism was especially fun to work on." },
+                { "id": "sd-example-3", "title": "Trait: Poltergeist", "youtubeId": "CKvGBRxzL-c", "description": "A supernatural design for this special ability, which allows the player to interact with objects like doors via Hunt's Darksight remotely." },
+                { "id": "sd-example-4", "title": "Trait: Blademancer", "youtubeId": "FIL93TBVztg", "description": "This trait allows the player to retrieve throwable items from the distance. The supernatural sound design is a combination of a 2D oneshot and a positioned effect on the retrieved object itself." },
+                { "id": "sd-example-5", "title": "Character Animation", "youtubeId": "1JkaUGANt7Y", "description": "A combination of foley and... " },
+                { "id": "sd-example-6", "title": "Ambience Details", "youtubeId": "Z4737DRB6xI", "description": "I designed sounds for multiple different ambience... " },
+                { "id": "sd-example-7", "title": "Cornfield Ambience", "youtubeId": "ln9ZfN21X-k", "description": "This ambisonics plays on top of the global map ambience. To make the soundfield slightly positional when standing outside, the spread is connected to the distance in the attenuation." },
+                { "id": "sd-example-8", "title": "Bats", "youtubeId": "3C6BPFyQpiU", "description": "..." }
+            ]
+        },
+        "explorative-projects": {
+            "videos": [
+                {
+                    "id": "exp-project-1",
+                    "youtubeId": "Hm41KoRnL9Q", 
+                    "title": "Monuments of Division (2024)",
+                    "description": "..."
+                },
+                {
+                    "id": "exp-project-2",
+                    "youtubeId": "JCDqvzKDb3s", 
+                    "title": "Panopt/sonicon (2021)",
+                    "description": "Among other things this project was inspired by the artificial synchronicity of our perception that is processing our sonic and visual surroundings and how it connects them to an audiovisual experience. Our sonic perception influences the way how we see things and vice versa. Depending on time changes we perceive some phenomena as connected or as serperate on the other hand. Every room in the game explores a slightly different narrative or theme."
+                },
+                {
+                    "id": "exp-project-3",
+                    "youtubeId": "6V8D7Eaq1OA", 
+                    "title": "Klanggewebe Iteration II (2018)",
+                    "description": "The idea behind this work developed out of the question how visual structures can be transformed into auditive output. Plants grow depending on certain rules and with specific patterns. Following this idea, the growing instructions of Klanggewebe are being algorithmically generated in PureData, which sends this information to the visual software sequencer IanniX. IanniX sends, depending on its appearance structure, data out again to control virtual software instruments, electronic sounds and samples. The sound gets routed between 4 channels in the room, depending on the changing visual focus. The project was realized 2018 in collaboration with Ives Schachtschabel."
+                }
+            ]
+        }
+    }
+    </script>
+
     <script>
-        // Get references to elements
-        const navLinks = document.querySelectorAll('.nav-link');
+        // DOM Element References
+        const navLinks = document.querySelectorAll('.nav-link'); // All navigation links including home
         const pages = document.querySelectorAll('.page');
         const pageContainer = document.querySelector('.page-container');
-        // Get reference to the video modal overlay
         const modalOverlay = document.getElementById('video-modal-overlay');
-        // Get specific reference to the image in the home page about section
         const homeProfileImage = document.getElementById('home-profile-image');
-        // Get reference to the script tag containing video data
+        const aboutProfileImage = document.getElementById('about-profile-image');
         const videoDataScript = document.getElementById('video-data');
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navMenuCollapsible = document.getElementById('navMenuCollapsible');
+        const allPageNavLinksInMenu = document.querySelectorAll('#navMenuCollapsible .nav-links-list .nav-link');
 
-        // Parse the video data from the script tag
+
+        // Video Data Initialization
         let videoTopics = {};
         if (videoDataScript && videoDataScript.textContent) {
             try {
                 videoTopics = JSON.parse(videoDataScript.textContent);
             } catch (e) {
                 console.error("Error parsing video data:", e);
-                // Initialize with empty data or handle error as needed
-                videoTopics = {};
             }
         } else {
             console.warn("Video data script tag not found or is empty.");
-            videoTopics = {};
         }
 
+        // Prepare a flat list of all videos for easier lookup
+        let allVideos = [];
+        for (const key in videoTopics) {
+            if (videoTopics.hasOwnProperty(key)) {
+                const sectionData = videoTopics[key];
+                if (sectionData.videos && sectionData.videos.length > 0) {
+                    sectionData.videos.forEach(video => {
+                        let videoEntry = { ...video };
+                        videoEntry.galleryType = (key === 'explorative-projects') ? 'explorative' : 'game-audio';
+                        if (videoEntry.galleryType === 'game-audio') {
+                            videoEntry.topicShowText = sectionData.showText;
+                        }
+                        allVideos.push(videoEntry);
+                    });
+                }
+            }
+        }
 
-        // Function to set the container height based on the active page
+        // --- Page Navigation and Height Adjustment ---
         function setContainerHeight() {
             const activePage = pageContainer.querySelector('.page.active');
             if (activePage) {
-                // Use scrollHeight to get the full content height
                 pageContainer.style.height = activePage.scrollHeight + 'px';
             }
         }
 
-        // Function to handle navigation link clicks
         function handleNavClick(event) {
-            // The invisible placeholder is removed, so this check is no longer strictly needed
-            // but keeping it doesn't hurt if the structure changes later.
-            if (event.currentTarget.parentElement.classList.contains('invisible')) {
-                return; // Do nothing if clicking the invisible placeholder link
-            }
-            event.preventDefault(); // Prevent default anchor behavior
-
+            event.preventDefault();
             const targetId = event.currentTarget.dataset.target;
             const targetPage = document.getElementById(`page-${targetId}`);
             const currentPage = pageContainer.querySelector('.page.active');
 
-            if (!targetPage || targetPage === currentPage) {
-                return; // Exit if clicking the active link or target not found
-            }
+            if (!targetPage || targetPage === currentPage) return;
 
-            // --- Close Video Modal if open ---
-            if (modalOverlay.classList.contains('visible')) {
-                closeModal(); // Call the closeModal function
-            }
-            // --- End Close Video Modal ---
+            if (modalOverlay.classList.contains('visible')) closeModal();
 
-
-            // --- Transition Logic (This part remains the same) ---
-
-            // Measure target height (requires temporary rendering adjustments)
-            // Temporarily show target page to measure height accurately
-            targetPage.style.position = 'relative'; // Make it relative for height calculation
-            targetPage.style.visibility = 'hidden'; // Keep it hidden
+            targetPage.style.position = 'relative';
+            targetPage.style.visibility = 'hidden';
             targetPage.style.opacity = '0';
-            targetPage.style.transform = 'translateX(0)'; // Move to final position for height calc
-            targetPage.style.display = 'block'; // Ensure display is block if it was none
-
-
+            targetPage.style.transform = 'translateX(0)';
+            targetPage.style.display = 'block';
             const targetHeight = targetPage.scrollHeight;
 
-            // Revert temporary changes before animation
-            targetPage.style.position = 'absolute'; // Back to absolute for animation start
-            targetPage.style.visibility = ''; // Will be set by active class
-            targetPage.style.opacity = ''; // Will be set by active class
-            targetPage.style.transform = ''; // Will be set by base .page or animation class
-            targetPage.style.display = ''; // Revert display
+            targetPage.style.position = 'absolute';
+            targetPage.style.visibility = '';
+            targetPage.style.opacity = '';
+            targetPage.style.transform = '';
+            targetPage.style.display = '';
 
-
-            // 1. Animate the current page out
             if (currentPage) {
-                currentPage.style.position = 'absolute'; // Ensure absolute for transition
+                currentPage.style.position = 'absolute';
                 currentPage.classList.add('slide-out-left');
                 currentPage.classList.remove('active');
-
                 currentPage.addEventListener('transitionend', () => {
                     currentPage.classList.remove('slide-out-left');
-                    // Keep position absolute until it becomes active again
                 }, { once: true });
             }
 
-            // 2. Set the container height to the target page's height
             pageContainer.style.height = targetHeight + 'px';
 
-            // 3. Animate the target page in
             requestAnimationFrame(() => {
-                // Start position is already translateX(100%) from base .page rule
-                // Adding active class triggers the transition to translateX(0)
                 targetPage.classList.add('active');
-                // The 'active' class CSS should handle the position: relative and visibility: visible
             });
 
-            // --- Update Navigation Link Styles (This part remains the same) ---
-            // Select only the actual navigation links
-            const actualNavLinks = document.querySelectorAll('.nav-link'); // .nav-link selector now only gets the main links
-            actualNavLinks.forEach(link => {
-                // No need for the invisible check anymore
-                link.classList.remove('is-active'); // Remove active class from all
+            navLinks.forEach(link => {
+                link.classList.remove('is-active');
                 if (link.dataset.target === targetId) {
-                    link.classList.add('is-active'); // Add active class to the target link
+                    link.classList.add('is-active');
                 }
             });
-
-            // --- Video Gallery Specific: Load videos if navigating to the game-audio page ---
+            
             if (targetId === 'game-audio') {
-                // Check if videos are already loaded to avoid double loading
-                // A simple check could be to see if the videoTopicsContainer has any child elements
-                const videoTopicsContainer = document.getElementById('video-topics-container');
-                if (videoTopicsContainer.children.length === 0 || videoTopicsContainer.querySelector('.loading-card')) {
-                     loadInitialData(); // Load videos if container is empty or contains loading cards
+                const topicsContainer = document.getElementById('video-topics-container');
+                if (!topicsContainer.children.length || topicsContainer.querySelector('.loading-card')) {
+                    loadGameAudioData();
                 } else {
-                     // If videos are already loaded, just ensure height is correct
-                     setContainerHeight();
+                    setContainerHeight();
+                }
+            } else if (targetId === 'explorative') {
+                const explorativeContainer = document.getElementById('explorative-video-list-container');
+                if (!explorativeContainer.children.length) {
+                    loadExplorativeData();
+                } else {
+                    setContainerHeight();
                 }
             } else {
-                 // For other pages, just set the height
-                 setContainerHeight();
+                setContainerHeight();
             }
         }
 
-        // --- Initial Setup ---
+        // --- Hamburger Menu Functionality ---
+        hamburgerMenu.addEventListener('click', () => {
+            const isOpen = navMenuCollapsible.classList.toggle('open');
+            hamburgerMenu.setAttribute('aria-expanded', isOpen);
+        });
+
+        allPageNavLinksInMenu.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navMenuCollapsible.classList.contains('open')) {
+                    navMenuCollapsible.classList.remove('open');
+                    hamburgerMenu.setAttribute('aria-expanded', 'false');
+                }
+            });
+        });
+
+        // --- Initial Setup on Window Load ---
         window.addEventListener('load', () => {
             const initialActivePage = pageContainer.querySelector('.page.active');
             if (initialActivePage) {
-                initialActivePage.style.position = 'relative'; // Ensure initial page is relative
-                // If the initial active page is game-audio, load videos
-                if (initialActivePage.id === 'page-game-audio') {
-                    loadInitialData();
-                } else {
-                    setContainerHeight(); // Set initial height for non-game-audio pages
-                }
-            } else {
-                setContainerHeight(); // Set initial height if no page is initially active (shouldn't happen with home-link active)
-            }
-            window.addEventListener('resize', setContainerHeight); // Adjust height on resize
+                 // Ensure initial active page is positioned correctly for height calculation
+                initialActivePage.style.position = 'relative';
+                initialActivePage.style.display = 'block'; // Ensure it's displayed
 
-            // Re-check height after images load on any page
+                const initialTargetId = initialActivePage.id.replace('page-', '');
+
+                if (initialTargetId === 'game-audio') {
+                    loadGameAudioData(); // loadGameAudioData calls setContainerHeight after rendering
+                } else if (initialTargetId === 'explorative') {
+                    loadExplorativeData(); // loadExplorativeData calls setContainerHeight after rendering
+                    // Add a small delay or requestAnimationFrame after loading data for initial load
+                    requestAnimationFrame(() => {
+                         requestAnimationFrame(() => { // Double rAF for extra safety
+                            setContainerHeight();
+                         });
+                    });
+                } else {
+                    setContainerHeight(); // Call setContainerHeight for other pages immediately
+                }
+
+                // Reset position after initial height calculation if needed for transitions
+                // This might need adjustment depending on desired initial animation
+                // initialActivePage.style.position = ''; // Or 'absolute' if needed for transition out later
+
+            } else {
+                // If no active page is found on load (shouldn't happen with default active class)
+                setContainerHeight();
+            }
+
+            // Recalculate height on window resize
+            window.addEventListener('resize', setContainerHeight);
+
+            // Recalculate height if images within pages load
             pages.forEach(page => {
                 page.querySelectorAll('img').forEach(img => {
-                    if (!img.complete) {
-                        img.addEventListener('load', setContainerHeight, { once: true });
-                    }
+                    if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
                 });
             });
+            // Specific image load listeners for profile images
+            if (homeProfileImage && !homeProfileImage.complete) homeProfileImage.addEventListener('load', setContainerHeight, { once: true });
+            if (aboutProfileImage && !aboutProfileImage.complete) aboutProfileImage.addEventListener('load', setContainerHeight, { once: true });
 
-            // Explicitly listen for the home page profile image load
-            if (homeProfileImage && !homeProfileImage.complete) {
-                homeProfileImage.addEventListener('load', setContainerHeight, { once: true });
-            }
-
-
-            // Add click listeners only to actual navigation links
-            const actualNavLinks = document.querySelectorAll('.nav-link'); // .nav-link selector now only gets the main links
-            actualNavLinks.forEach(link => {
-                // No need for the invisible check anymore
+            // Add click listeners to navigation links
+            navLinks.forEach(link => {
                 link.addEventListener('click', handleNavClick);
             });
         });
 
 
-        // --- Video Gallery Script ---
+        // --- Initial Setup on Window Load ---
+        window.addEventListener('load', () => {
+            const initialActivePage = pageContainer.querySelector('.page.active');
+            if (initialActivePage) {
+                initialActivePage.style.position = 'relative';
+                const initialTargetId = initialActivePage.id.replace('page-', '');
+                if (initialTargetId === 'game-audio') loadGameAudioData();
+                else if (initialTargetId === 'explorative') loadExplorativeData();
+                else setContainerHeight();
+            } else {
+                setContainerHeight(); 
+            }
 
-        // videoTopics is now read from the HTML
+            window.addEventListener('resize', setContainerHeight);
 
-        // DOM Elements for Video Gallery
-        const videoTopicsContainer = document.getElementById('video-topics-container');
-        const noResultsMessage = document.getElementById('no-results');
-        // modalOverlay is already defined above
+            pages.forEach(page => {
+                page.querySelectorAll('img').forEach(img => {
+                    if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
+                });
+            });
+            if (homeProfileImage && !homeProfileImage.complete) homeProfileImage.addEventListener('load', setContainerHeight, { once: true });
+            if (aboutProfileImage && !aboutProfileImage.complete) aboutProfileImage.addEventListener('load', setContainerHeight, { once: true });
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', handleNavClick);
+            });
+        });
+
+        // --- Video Gallery Logic ---
         const youtubeIframe = document.getElementById('youtube-iframe');
         const modalTitle = document.getElementById('modal-title');
         const modalDescription = document.getElementById('modal-description');
         const modalCloseBtn = document.getElementById('modal-close-btn');
-        const modalInfo = document.getElementById('modal-info'); // Get reference to modal-info div
+        const modalInfoContainer = document.getElementById('modal-info');
 
+        let isLoadingGameAudio = false;
 
-        let allVideos = []; // To store a flattened list of all videos for modal lookup
-        let isLoading = false; // State for loading
-
-        // Function to create a video card HTML string
-        function createVideoCard(video, topic) {
-            // Using standard YouTube thumbnail URL format
-            const thumbnailUrl = `http://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`; // Standard YouTube thumbnail URL
-            const fallbackThumbnailUrl = `https://placehold.co/320x180/2d3748/a0aec0?text=No+Image`; // Placeholder
-
-            // Conditionally create the video info HTML based on topic.showText
-            // Only include the video info div with title if showText is true for the topic
-            const videoInfoHtml = topic.showText ?
-                `
-                <div class="video-info">
-                    <h3>${video.title}</h3>
-                </div>
-                ` :
-                ''; // If showText is false, videoInfoHtml is an empty string
-
-
+        function createGameAudioVideoCard(video, topic) {
+            // Corrected YouTube thumbnail URL
+            const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
+            const fallbackThumbnailUrl = `https://placehold.co/320x180/2d3748/a0aec0?text=No+Image`;
+            const videoInfoHtml = topic.showText ? `<div class="video-info"><h3>${video.title || ''}</h3></div>` : '';
             return `
                 <div class="video-card" data-id="${video.id}">
                     <div class="video-thumbnail">
-                        <img src="${thumbnailUrl}" alt="${video.title}" onerror="this.onerror=null; this.src='${fallbackThumbnailUrl}';">
-                        <div class="play-icon-overlay">
-                            ▶
-                        </div>
+                        <img src="${thumbnailUrl}" alt="${video.title || 'Video thumbnail'}" onerror="this.onerror=null; this.src='${fallbackThumbnailUrl}';">
+                        <div class="play-icon-overlay">▶</div>
                     </div>
                     ${videoInfoHtml}
-                </div>
-            `;
+                </div>`;
         }
-
-        // Function to create loading placeholder cards
-        function createLoadingPlaceholders(count) {
-            let placeholders = '';
-            for (let i = 0; i < count; i++) {
-                placeholders += `
-            <div class="loading-card">
-                <div class="loading-thumbnail"></div>
-                <div class="loading-title"></div>
-                </div>
-        `; // Removed loading-description placeholder
-            }
-            return placeholders;
-        }
-
-        // Function to render videos organized by topic
-        function renderVideosByTopic(topicsData) {
-            videoTopicsContainer.innerHTML = ''; // Clear current content
-            noResultsMessage.style.display = 'none'; // Hide no results message
-
-            if (isLoading) {
-                // Show loading placeholders for each topic
-                for (const topicId in topicsData) {
-                    if (topicsData.hasOwnProperty(topicId)) {
-                        const topic = topicsData[topicId]; // Get the topic object
-                        const topicSectionHtml = `
-                    <div class="topic-section">
-                        <h2 class="topic-title">${topic.title}</h2>
-                        <div class="video-grid">
-                            ${createLoadingPlaceholders(topic.videos.length > 0 ? topic.videos.length : 3)}
-                        </div>
+        
+        function createExplorativeVideoEntry(video) {
+            // Corrected YouTube thumbnail URL
+            const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/mqdefault.jpg`;
+            const fallbackThumbnailUrl = `https://placehold.co/360x203/2d3748/a0aec0?text=No+Image`;
+            return `
+                <div class="explorative-video-entry" data-id="${video.id}">
+                    <div class="explorative-video-thumbnail">
+                        <img src="${thumbnailUrl}" alt="${video.title}" onerror="this.onerror=null; this.src='${fallbackThumbnailUrl}';">
+                        <div class="play-icon-overlay">▶</div>
                     </div>
-                `;
-                        videoTopicsContainer.innerHTML += topicSectionHtml;
-                    }
-                }
+                    <div class="explorative-video-info">
+                        <h3>${video.title}</h3>
+                        <p>${video.description}</p>
+                    </div>
+                </div>`;
+        }
+
+        function createLoadingPlaceholders(count) {
+            return Array(count).fill(`
+                <div class="loading-card">
+                    <div class="loading-thumbnail"></div>
+                    <div class="loading-title"></div>
+                </div>`).join('');
+        }
+
+        function renderGameAudioVideos(data) {
+            const container = document.getElementById('video-topics-container');
+            const noResultsEl = document.getElementById('no-results');
+            if (!container) return;
+
+            container.innerHTML = '';
+            if (noResultsEl) noResultsEl.style.display = 'none';
+
+            if (isLoadingGameAudio) {
+                Object.keys(data)
+                    .filter(key => key !== 'explorative-projects')
+                    .forEach(topicId => {
+                        const topic = data[topicId];
+                        container.innerHTML += `
+                            <div class="topic-section">
+                                <h2 class="topic-title">${topic.title}</h2>
+                                <div class="video-grid">
+                                    ${createLoadingPlaceholders(topic.videos.length > 0 ? topic.videos.length : 3)}
+                                </div>
+                            </div>`;
+                    });
+                setContainerHeight();
                 return;
             }
 
-            let totalVideos = 0;
-            // Flatten the videoTopics data into allVideos and add topicShowText property
-            allVideos = [];
-            for (const topicId in topicsData) {
-                if (topicsData.hasOwnProperty(topicId)) {
-                    const topic = topicsData[topicId];
+            let totalVideosRendered = 0;
+            Object.keys(data)
+                .filter(key => key !== 'explorative-projects')
+                .forEach(topicId => {
+                    const topic = data[topicId];
                     if (topic.videos && topic.videos.length > 0) {
-                        totalVideos += topic.videos.length;
-                        const videoGridHtml = topic.videos.map(video => {
-                            // Add topicShowText to the video object for modal use
-                            const videoWithTopicInfo = { ...video, topicShowText: topic.showText };
-                            allVideos.push(videoWithTopicInfo); // Add to flattened list
-                            // Pass the topic object to createVideoCard to control gallery text display
-                            return createVideoCard(video, topic);
-                        }).join('');
-
-                        const topicSectionHtml = `
-                    <div class="topic-section">
-                        <h2 class="topic-title">${topic.title}</h2>
-                        <div class="video-grid">
-                            ${videoGridHtml}
-                        </div>
-                    </div>
-                `;
-                        videoTopicsContainer.innerHTML += topicSectionHtml;
+                        totalVideosRendered += topic.videos.length;
+                        const videoGridHtml = topic.videos.map(video => createGameAudioVideoCard(video, topic)).join('');
+                        container.innerHTML += `
+                            <div class="topic-section">
+                                <h2 class="topic-title">${topic.title}</h2>
+                                <div class="video-grid">${videoGridHtml}</div>
+                            </div>`;
                     }
-                }
+                });
+
+            if (totalVideosRendered === 0 && noResultsEl) {
+                noResultsEl.style.display = 'block';
             }
-
-
-            if (totalVideos === 0) {
-                noResultsMessage.style.display = 'block';
-                noResultsMessage.textContent = `No videos found.`;
-            }
-
-            // After rendering videos, ensure the container height is updated
             setContainerHeight();
+            // Ensure to re-calculate height if images in any gallery load
+            document.querySelectorAll('.video-thumbnail img, .explorative-video-thumbnail img').forEach(img => {
+                if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
+            });
+        }
+        
+        function renderExplorativeVideos() {
+            const container = document.getElementById('explorative-video-list-container');
+            const noResultsEl = document.getElementById('no-explorative-results');
+            const explorativeData = videoTopics['explorative-projects'];
 
-            // Add event listeners for thumbnail images to ensure height updates after they load
-            videoTopicsContainer.querySelectorAll('.video-thumbnail img').forEach(img => {
-                if (!img.complete) {
-                    img.addEventListener('load', setContainerHeight, { once: true });
-                }
+            if (!container || !explorativeData || !explorativeData.videos) {
+                if (noResultsEl) noResultsEl.style.display = 'block';
+                setContainerHeight();
+                return;
+            }
+            
+            container.innerHTML = '';
+            if (explorativeData.videos.length > 0) {
+                if (noResultsEl) noResultsEl.style.display = 'none';
+                container.innerHTML = explorativeData.videos.map(video => createExplorativeVideoEntry(video)).join('');
+            } else {
+                if (noResultsEl) noResultsEl.style.display = 'block';
+            }
+            setContainerHeight();
+            container.querySelectorAll('.explorative-video-thumbnail img').forEach(img => {
+                if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
             });
         }
 
-        // Function to open the modal
-        // Now includes the vq=hd1080 parameter for all videos
         function openModal(video) {
-            // Using youtube-nocookie.com for privacy-enhanced mode and suggesting HD quality
             youtubeIframe.src = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?vq=hd1080&autoplay=1`;
 
-            // Conditionally set modal title and description and show/hide modal-info
-            if (video.topicShowText) {
-                modalTitle.textContent = video.title;
-                modalDescription.textContent = video.description;
-                modalInfo.style.display = 'block'; // Show the info div
-            } else {
-                modalTitle.textContent = ''; // Clear title in modal if showText is false
-                modalDescription.textContent = ''; // Clear description in modal if showText is false
-                modalInfo.style.display = 'none'; // Hide the info div entirely if showText is false
-            }
-
-            modalOverlay.classList.add('visible');
-            document.body.classList.add('overflow-hidden'); // Prevent body scrolling
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            youtubeIframe.src = ''; // Stop the video by removing the src
-            modalOverlay.classList.remove('visible');
-            document.body.classList.remove('overflow-hidden'); // Re-enable body scrolling
-            // Clear modal content and reset modal-info display
-            modalTitle.textContent = '';
-            modalDescription.textContent = '';
-            modalInfo.style.display = 'block'; // Reset display for the next open
-        }
-
-        // Event Listener for clicking on a video card (using event delegation)
-        // Attach listener to the main container within the game-audio page
-        document.getElementById('page-game-audio').addEventListener('click', (event) => {
-            const videoCard = event.target.closest('.video-card');
-            if (videoCard) {
-                const videoId = videoCard.dataset.id;
-                // Find the video in the flattened allVideos array
-                const selectedVideo = allVideos.find(video => video.id === videoId);
-                if (selectedVideo) {
-                    openModal(selectedVideo);
+            if (video.galleryType === 'explorative') {
+                modalTitle.textContent = '';
+                modalDescription.textContent = '';
+                modalInfoContainer.style.display = 'none'; 
+            } else if (video.galleryType === 'game-audio') {
+                if (video.topicShowText) {
+                    modalTitle.textContent = '';
+                    modalDescription.textContent = video.description || '';
+                    modalInfoContainer.style.display = 'block';
+                } else {
+                    modalTitle.textContent = '';
+                    modalDescription.textContent = '';
+                    modalInfoContainer.style.display = 'none';
                 }
             }
-        });
-
-        // Event Listener for clicking outside the modal content to close it
-        modalOverlay.addEventListener('click', (event) => {
-            // Check if the click target is the overlay itself, not the modal content
-            if (event.target === modalOverlay) {
-                closeModal();
-            }
-        });
-
-        // Event Listener for the modal close button
-        modalCloseBtn.addEventListener('click', closeModal);
-
-        // Simulate initial data loading
-        function loadInitialData() {
-            if (!isLoading) { // Prevent multiple loading calls
-                isLoading = true;
-                renderVideosByTopic(videoTopics); // Show loading state for topics
-                // Simulate fetching data (this timeout is just for the loading animation)
-                setTimeout(() => {
-                    // The actual videoTopics data is already loaded from the script tag
-                    isLoading = false;
-                    renderVideosByTopic(videoTopics); // Render actual videos by topic
-                    // setContainerHeight() is now called inside renderVideosByTopic
-                }, 500); // Simulate 500ms loading time
-            }
+            modalOverlay.classList.add('visible');
+            document.body.classList.add('overflow-hidden');
         }
 
-        // Note: loadInitialData() is now called when the 'game-audio' page becomes active
-        // or if it's the initial active page on load.
+        function closeModal() {
+            youtubeIframe.src = '';
+            modalOverlay.classList.remove('visible');
+            document.body.classList.remove('overflow-hidden');
+            modalTitle.textContent = '';
+            modalDescription.textContent = '';
+            modalInfoContainer.style.display = 'block'; 
+        }
 
-        // --- End Video Gallery Script ---
+        pageContainer.addEventListener('click', (event) => {
+            const videoItem = event.target.closest('.video-card, .explorative-video-entry');
+            if (videoItem) {
+                const videoId = videoItem.dataset.id;
+                const selectedVideo = allVideos.find(video => video.id === videoId);
+                if (selectedVideo) openModal(selectedVideo);
+            }
+        });
+        
+        modalOverlay.addEventListener('click', (event) => {
+            if (event.target === modalOverlay) closeModal();
+        });
+        modalCloseBtn.addEventListener('click', closeModal);
+
+        function loadGameAudioData() {
+            if (isLoadingGameAudio) return;
+            isLoadingGameAudio = true;
+            renderGameAudioVideos(videoTopics); 
+            setTimeout(() => {
+                isLoadingGameAudio = false;
+                renderGameAudioVideos(videoTopics); 
+            }, 500);
+        }
+        
+        function loadExplorativeData() {
+            renderExplorativeVideos();
+        }
     </script>
-    </body>
-
+</body>
 </html>

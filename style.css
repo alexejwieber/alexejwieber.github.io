@@ -8,6 +8,7 @@
     --dark-color: rgb(9, 19, 23);
     --strip-color: rgba(9, 19, 23, 0.9);
     --title-color: #13968b;
+    --nav-height: 60px; 
 }
 
 /* Page specific heading colors */
@@ -18,17 +19,14 @@
 
 /* --- Base Styles --- */
 body {
-    /* Keep overflow-x hidden to prevent horizontal scroll during transitions themselves */
     overflow-x: hidden;
     overflow-y: scroll;
     background: linear-gradient(45deg, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.8)),
     linear-gradient(45deg, #80e0db, #1094b1, #167c5d, #00b3ff);
     background-size: 400% 400%;
-
     font-family: 'Lexend', sans-serif;
     font-weight: 300;
-    font-style: normal;
-    color: var(--text-color); /* text-gray-800 */
+    color: var(--text-color);
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -38,16 +36,15 @@ body {
     max-width: 1280px;
     margin-left: auto;
     margin-right: auto;
-    padding: 1rem; /* p-4 */
+    padding: 1rem;
     overflow-y: auto;
-    padding-top: 1rem;  /* Reduced top padding */
-    padding-bottom: 4rem; /* keep the bottom padding */
+    padding-top: calc(var(--nav-height) + 1rem); 
+    padding-bottom: 4rem;
 }
 
-/* Responsive padding for container (from md:p-8) */
-@media (min-width: 768px) {
+@media (min-width: 769px) { /* Changed to 769px to match mobile breakpoint */
     .site-container {
-        padding-top: 2rem; /* keep the bottom padding */
+        padding-top: calc(var(--nav-height) + 2rem);
         padding-bottom: 8rem;
     }
 }
@@ -60,207 +57,273 @@ body {
     width: 100%;
     z-index: 1000;
     background-color: var(--strip-color);
-    box-shadow: 0px 10px 10px  var(--strip-color);
+    box-shadow: 0px 10px 10px var(--strip-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    padding: 0 1rem; 
+    height: var(--nav-height);
+    box-sizing: border-box;
 }
 
-.site-nav ul {
-    display: flex; /* flex */
-    align-items: center; /* items-center */
-    /* On smaller screens, items might just compress or wrap slightly */
-    /* If stacking were needed, add flex-direction: column; here with a media query */
+#home-link { 
+    font-weight: 500;
+    padding: 0.3rem 1.2rem; 
+    white-space: nowrap; 
+    flex-shrink: 0; /* Prevent home link from shrinking */
 }
 
-/* flex-grow: 1 pushes the last item (social links) to the right */
-/* justify-content: center centers the nav links *within* this growing space */
-.site-nav .nav-links-list {
-    flex-grow: 1; /* flex-grow */
-    display: flex; /* flex */
-    justify-content: center; /* justify-center */
-    gap: 1rem; /* space-x-4 */
+.hamburger-menu {
+    display: none; 
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001; 
 }
 
-/* Responsive gap for nav links list item container (from md:space-x-8) */
-@media (min-width: 768px) {
-    .site-nav .nav-links-list {
-        gap: 2rem; /* md:space-x-8 */
+.hamburger-icon rect {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.hamburger-menu[aria-expanded="true"] .hamburger-icon rect:nth-child(1) {
+    transform: translateX(23px) translateY(15px) rotate(45deg); 
+}
+.hamburger-menu[aria-expanded="true"] .hamburger-icon rect:nth-child(2) {
+    opacity: 0;
+}
+.hamburger-menu[aria-expanded="true"] .hamburger-icon rect:nth-child(3) {
+    transform: translateX(-30px) translateY(40px) rotate(-45deg); 
+}
+
+/* Container for page links and social links */
+.nav-menu-collapsible {
+    display: flex; /* Default for desktop: items in a row */
+    align-items: center;
+    /* For desktop, this container will be on the right of home-link.
+       We need nav-links-list to be centered globally.
+       And social-links-list to be on the far right.
+    */
+}
+
+/* Desktop specific layout for nav-menu-collapsible and its children */
+@media (min-width: 769px) {
+    .nav-menu-collapsible {
+        flex-grow: 1; /* Allows nav-links-list to center within this expanded space */
+        justify-content: space-between; /* Puts nav-links-list in middle, social on right */
+    }
+    .nav-links-list { /* The page links: Game Audio, Explorative, About */
+        display: flex;
+        justify-content: center; /* Center the list items (li) */
+        flex-grow: 1; /* Takes up space to allow centering */
+        padding: 0; /* Reset mobile padding */
+        margin: 0; /* Reset mobile margin */
+        gap: 0.5rem;
+    }
+    .social-links-list {
+        margin-left: 1rem; /* Space from page links */
+        flex-shrink: 0; /* Prevent social links from shrinking */
     }
 }
 
-/* Social Media Links List Item Container */
-.social-links-list {
-    display: flex; /* Arrange social icons in a row */
-    align-items: center; /* Vertically center icons */
-    gap: 0.75rem; /* space between icons */
-    margin-top: 0.rem;
-    margin-right: 1rem;
 
+.nav-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Base for both mobile (column) and desktop (row) */
+    align-items: center; /* Vertical alignment */
+    gap: 0.5rem;
+}
+.nav-links-list li {
+    display: inline-block; 
 }
 
-.social-links-list a {
+.social-links-list {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links-list a { 
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-radius: 50%;
     width: 36px;
     height: 36px;
     transition: background-color 0.3s ease-in-out;
 }
-
 .social-links-list a:hover {
     background-color: var(--highlight-color);
 }
-
-/* Style for social media icons (images) */
-.social-links-list a svg {
+.social-links-list a svg { 
     display: block;
     width: 24px;
     height: 24px;
     fill: var(--text-color);
     transition: fill 0.3s ease-in-out;
 }
-
 .social-links-list a:hover svg {
-    fill: #000;
+    fill: var(--dark-color);
 }
 
-.nav-link {
+.nav-link { 
     color: var(--text-color);
     text-decoration: none;
     font-weight: 300;
-    padding: 0.3rem 1.2rem;
+    padding: 0.3rem 1rem; 
     border-radius: 2rem;
-    box-shadow: 0 0 0 1.9px var(--text-color); /* White outline */
-    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    box-shadow: 0 0 0 1.9px var(--text-color);
+    transition: color 0.3s ease-in-out, box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    white-space: nowrap;
 }
 
-/* Style for the first nav link's right margin (from mr-4 and md:mr-8) */
-/* This now applies to the "Home" link */
-#home-link {
-    font-weight: 500;
-    background-color: var(--back-color) !important;
+#home-link.nav-link { 
+    background-color: var(--back-color) !important; 
     color: var(--text-color) !important;
     box-shadow: 0 0 0 1.9px var(--text-color) !important;
 }
-
-#home-link.is-active {
-    background-color: var(--back-color) !important;
+#home-link.nav-link.is-active {
+    color: var(--highlight-color) !important;
+    box-shadow: 0 0 0 1.9px var(--highlight-color) !important;
+}
+#home-link.nav-link:hover:not(.is-active) {
     color: var(--highlight-color) !important;
     box-shadow: 0 0 0 1.9px var(--highlight-color) !important;
 }
 
-/* FIX: Add hover style for the Home link when it is NOT active */
-#home-link:hover:not(.is-active) {
-    color: var(--highlight-color) !important; /* Change text color on hover */
-    box-shadow: 0 0 0 1.9px var(--highlight-color) !important; /* Change outline color on hover */
-}
-
-
-@media (min-width: 768px) {
-    .site-nav ul li:first-child .nav-link {
-        margin-right: 2rem; /* md:mr-8 */
-    }
-}
-
-@media (min-width: 768px) {
-    .site-nav ul li:first-child .nav-link {
-        margin-right: 2rem; /* md:mr-8 */
-    }
-}
-
-/* Style for inactive navigation links (from text-gray-600, border-transparent) */
-.nav-link:not(.is-active) {
-    color: var(--text-color);
-    text-decoration: none;
-}
-
-/* Style for active navigation links (from text-indigo-600, border-indigo-600) */
-.nav-link.is-active {
-    color: var(--highlight-color);
-    box-shadow: 0 0 0 1.4px var(--highlight-color);
-    text-decoration: none;
-}
-
-/* Hover style for navigation links (from hover:text-indigo-800) */
-.nav-link:hover {
+.nav-link.is-active { 
     color: var(--highlight-color);
     box-shadow: 0 0 0 1.4px var(--highlight-color);
 }
+.nav-link:hover { 
+    color: var(--highlight-color);
+    box-shadow: 0 0 0 1.4px var(--highlight-color);
+}
+
+
+/* Mobile Navigation Styles */
+@media (max-width: 768px) {
+    .site-nav {
+        padding: 0 0.75rem; 
+    }
+    .hamburger-menu {
+        display: block; 
+    }
+    .nav-menu-collapsible {
+        display: none; 
+        position: absolute;
+        top: var(--nav-height); 
+        left: 0;
+        width: 100%;
+        background-color: var(--strip-color);
+        flex-direction: column;
+        align-items: stretch; 
+        padding: 1rem 0; 
+        box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+        gap: 0; 
+    }
+    .nav-menu-collapsible.open {
+        display: flex; 
+    }
+    .nav-links-list { /* Page links in mobile menu */
+        flex-direction: column;
+        width: 100%;
+        gap: 0;
+    }
+    .nav-links-list li, .social-links-list li { /* Make li full width for mobile */
+        width: 100%;
+    }
+    .nav-links-list .nav-link { /* Individual page links in mobile menu */
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+        border-radius: 0;
+        box-shadow: none;
+        border-bottom: 1px solid rgba(255,255,255,0.1); 
+    }
+    .nav-links-list li:last-child .nav-link {
+        border-bottom: none;
+    }
+    .nav-links-list .nav-link:hover {
+        background-color: rgba(255,255,255,0.05);
+    }
+    .social-links-list { /* Social links container in mobile menu */
+        flex-direction: row; 
+        justify-content: center; 
+        padding: 1rem 0 0.5rem 0; 
+        margin-left: 0; 
+        gap: 1rem; 
+        border-top: 1px solid rgba(255,255,255,0.1); 
+    }
+    .social-links-list a { 
+         width: 40px; height: 40px;
+    }
+     .social-links-list a svg {
+        width: 20px; height: 20px;
+    }
+}
+
 
 /* --- Page Container and Transitions --- */
-/* Container for pages */
 .page-container {
-    position: relative; /* Needed for absolute positioning of pages */
-    overflow: hidden; /* Hide overflowing content during transition */
+    position: relative;
+    overflow: hidden;
     transition: height 0.5s ease-in-out;
     will-change: height;
-    border-radius: 0.5rem; /* rounded-lg */
+    border-radius: 0.5rem;
 }
 
-/* Base styles for individual pages */
 .page {
-    position: absolute; /* Position pages on top of each other when not active */
-    top: 50px;
+    position: absolute;
     left: 0;
     width: 100%;
-    opacity: 0; /* Start hidden */
-    visibility: hidden; /* Use visibility for better accessibility/performance */
-    /* Ensure position is included in transition if you ever change it mid-animation,
-       but our JS now changes position only *after* visual animation */
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out, transform 0.5s ease-in-out;
-    transform: translateX(100%); /* Start off-screen to the right */
+    transform: translateX(100%);
     will-change: transform, opacity;
-    background-color: rgba(255, 255, 255, 0); /* bg-white */
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); /* shadow */
-    border-radius: 0.5rem; /* rounded-lg */
-
-    /* Responsive Padding (from p-6 md:p-10) */
-    padding: 1.5rem; /* p-6 */
+    background-color: rgba(255, 255, 255, 0);
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    box-sizing: border-box; 
 }
 
-/* Responsive padding for pages (from md:p-10) */
-@media (min-width: 768px) {
+@media (min-width: 769px) { /* Matched to mobile breakpoint */
      .page {
-        padding: 2.5rem; /* md:p-10 */
+        padding: 2.5rem;
      }
 }
 
-/* Style for the currently active/visible page */
 .page.active {
-    position: relative; /* Change to relative when active to influence container height */
+    position: relative;
     opacity: 1;
     visibility: visible;
-    transform: translateX(0); /* Bring to view */
-    z-index: 1; /* Ensure active page is clickable */
-}
-
-/* Animation for the page sliding out to the left */
-.page.slide-out-left {
-    /* These properties are also part of the transition */
-    transform: translateX(-100%); /* Move to the left */
-    opacity: 0;
-    visibility: hidden;
-    /* Position remains absolute if it was absolute when slide-out-left is added */
-}
-
-/* Ensure smooth transition when becoming active (This CSS rule is still used by JS after transform ends) */
-.page.active { /* Target .page.active state to apply final visual properties */
     transform: translateX(0);
-    opacity: 1;
-    visibility: visible;
-    position: relative; /* This is the key change from absolute that happens *after* visual anim */
     z-index: 1;
 }
 
-/* Margin for paragraphs within pages */
+.page.slide-out-left {
+    transform: translateX(-100%);
+    opacity: 0;
+    visibility: hidden;
+}
+
 .page p {
-    margin-bottom: 1rem; /* mb-4 */
+    margin-bottom: 1rem;
     font-size: 1.2rem;
     max-width: 95%;
 }
 
-.page h2{
+.page h2.page-title {
     font-size: 2.3rem;
+    margin-bottom: 1.5rem;
 }
 
 .page h3{
@@ -270,7 +333,6 @@ body {
 a {
     color: var(--highlight-color);
     text-decoration-color: var(--highlight-color-transparent);
-    /* Change font weight */
     font-weight: bold;
     transition: text-decoration-color 0.3s ease-in-out;
 }
@@ -280,84 +342,45 @@ a:hover {
     text-decoration-color: var(--highlight-color);
 }
 
-/* Specific list styles for the explorative page */
-#page-explorative ul {
-    list-style-type: disc; /* list-disc */
-    list-style-position: inside; /* list-inside */
-    margin-left: 1rem; /* ml-4 */
-    margin-bottom: 1rem; /* mb-4 */
-}
-
-/* Space between list items */
-#page-explorative ul li:not(:last-child) {
-    margin-bottom: 0.5rem; /* space-y-2 */
-}
-
-/* Styles for images within pages */
-.page-image {
-    margin-top: 1rem; /* mt-4 */
-    position: relative;
-    text-align: right;
-    border-radius: 0.5rem; /* rounded-lg */
-    width: 100%; /* w-full */
-    height: auto; /* h-auto */
-    max-width: 28rem; /* max-w-md */
-    display: block; /* Needed for mx-auto to work on img */
-    margin-left: auto; /* mx-auto */
-    margin-right: auto; /* mx-auto */
-}
-
 /* --- Home Page Text/Image Layout --- */
 .about-section-home {
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically by default */
-    align-items: center; /* Center items horizontally when stacked */
-    gap: 2rem; /* Add space between text and image */
-    margin-top: 2rem; /* Add some space below the page title */
-    padding-bottom: 2rem; /* Added padding to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .about-text {
-    flex: 1; /* Allow text to grow and shrink */
-    max-width: 100%; /* Prevent text from overflowing */
+    flex: 1;
+    max-width: 100%;
 }
 
 .about-image {
-    flex-shrink: 0; /* Prevent image from shrinking */
-    width: 100%; /* Default width for smaller screens */
-    max-width: 300px; /* Max width for the image */
-    text-align: center; /* Center image if its container is wider */
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 300px;
+    text-align: center;
 }
 
 .about-image img {
-    display: block; /* Remove extra space below image */
-    max-width: 100%; /* Ensure image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 0.5rem; /* Add rounded corners */
-    margin-left: auto; /* Center the image within its container */
-    margin-right: auto; /* Center the image within its container */
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-/* Adjust layout for larger screens */
-@media (min-width: 768px) {
+@media (min-width: 769px) { /* Matched to mobile breakpoint */
     .about-section-home {
-        flex-direction: row; /* Arrange items horizontally on larger screens */
-        align-items: flex-start; /* Align items to the top */
+        flex-direction: row;
+        align-items: flex-start;
     }
-
-    .about-text {
-        max-width: 60%; /* Allocate more space to text */
-    }
-
-    .about-image {
-        width: 40%; /* Allocate space to the image */
-        max-width: 400px; /* Increase max width for the image */
-    }
-
-     .about-image img {
-        margin-left: 0; /* Align image to the right within its container */
-        margin-right: 0;
-     }
+    .about-text { max-width: 60%; }
+    .about-image { width: 40%; max-width: 400px; }
+    .about-image img { margin-left: 0; margin-right: 0; }
 }
 
 /* --- Footer Styles --- */
@@ -379,50 +402,49 @@ a:hover {
 /* --- Text Container Styles (Used in About page) --- */
 .text-container {
     display: flex;
-    gap: 40px; /* Space between the lists */
-    justify-content: left; /* Center items horizontally */
-    align-items: top; /* Center items vertically */
-    margin: 0; /* Remove default body margin */
-    max-width: 95%
-  }
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: left;
+    align-items: top;
+    margin: 2rem 0 0 0;
+    max-width: 95%;
+}
 
-  .text-list ul {
+.text-list ul {
     list-style-type: disc;
     padding-left: 20px;
     font-size: 1.05rem;
-  }
-
-/* --- Video Gallery Styles --- */
-
-.main-container {
-    /* Adjust padding/margins if needed to fit within your page layout */
-    /* max-width: 1280px; already defined in your site-container */
-    margin-top: 2rem; /* Add some space below the existing content */
+}
+.text-list {
+    flex: 1;
+    min-width: 250px;
 }
 
+
+/* --- Video Gallery Styles (Game Audio) --- */
 .topic-section {
-    margin-bottom: 3rem; /* Space between topic sections */
+    margin-bottom: 3rem;
 }
 
 .topic-title {
     font-size: 1.75rem;
     font-weight: 500;
     margin-bottom: 1.5rem;
-    color: var(--title-color); /* Use your site's text color */
-    border-bottom: 2px solid var(--highlight-color); /* Use your site's highlight color */
-    padding-bottom: 0.5rem; /* Space below title */
-    display: inline-block; /* Needed for border-bottom width */
+    color: var(--title-color);
+    border-bottom: 2px solid var(--highlight-color);
+    padding-bottom: 0.5rem;
+    display: inline-block;
 }
 
 .video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 1.5rem;
-    padding-right: 40px; /* Added small right padding */
+    padding-right: 10px;
 }
 
 .video-card {
-    background-color: rgba(0, 0, 0, 0.2); /* Use a semi-transparent dark background */
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -431,7 +453,7 @@ a:hover {
     position: relative;
     display: flex;
     flex-direction: column;
-    box-sizing: border-box; /* Added box-sizing */
+    box-sizing: border-box;
 }
 
 .video-card:hover {
@@ -439,10 +461,10 @@ a:hover {
     transform: scale(1.02);
 }
 
-.video-thumbnail {
+.video-thumbnail { 
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%; 
     overflow: hidden;
 }
 
@@ -461,36 +483,132 @@ a:hover {
     display: flex;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* Hidden by default */
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
-    font-size: 3rem; /* Size of the text icon */
-    color: var(--highlight-color); /* White color for the icon */
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000; /* Black outline using text-shadow */
-    pointer-events: none; /* Ensure clicks go to the video card */
+    font-size: 3rem;
+    color: var(--highlight-color);
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    pointer-events: none;
 }
 
-.video-card:hover .play-icon-overlay {
-    opacity: 1; /* Visible on hover */
+.video-card:hover .play-icon-overlay,
+.explorative-video-entry:hover .play-icon-overlay {
+    opacity: 1;
 }
 
-.video-info {
+.video-info { 
     padding: 1rem;
-    flex-grow: 1; /* Allows info section to take remaining space */
+    flex-grow: 1;
 }
 
 .video-info h3 {
     font-size: 1.125rem;
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--text-color); /* Use your site's text color */
+    color: var(--text-color);
 }
 
-.video-info p {
-    font-size: 0.875rem;
-    color: #a0aec0; /* Keep a slightly muted color for description */
+/* --- Explorative Sound Design Video List Styles --- */
+#page-explorative > p {
+    margin-bottom: 2rem;
 }
 
-/* Loading State Styling */
+/* Styles for Explorative Sound Design video boxes */
+#page-explorative .explorative-video-entry {
+    background-color: var(--text-color); /* Replace with your desired background color */
+}
+
+#page-explorative .explorative-video-info h3 {
+    color: var(--dark-color); /* Replace with your desired title font color */
+}
+
+#page-explorative .explorative-video-info p {
+    color: var(--dark-color); /* Replace with your desired description font color */
+}
+
+.explorative-video-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.explorative-video-entry {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+    background-color: rgba(0, 0, 0, 0.25);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+@media (min-width: 769px) { /* Matched to mobile breakpoint */
+    .explorative-video-entry {
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1.5rem;
+    }
+}
+
+.explorative-video-entry:hover {
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.25);
+    transform: scale(1.01);
+}
+
+.explorative-video-thumbnail {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 360px;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.375rem;
+    border: 2px solid var(--dark-color);
+    margin: 0 auto 1rem auto;
+}
+
+@media (min-width: 769px) { /* Matched to mobile breakpoint */
+    .explorative-video-thumbnail {
+        width: 320px;
+        height: 180px;
+        margin: 0;
+        max-width: none;
+    }
+}
+
+.explorative-video-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.explorative-video-info {
+    flex-grow: 1;
+}
+
+.explorative-video-info h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
+}
+
+.explorative-video-info p {
+    font-size: 1rem;
+    color: #b0bec5;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+
+/* Loading State Styling (Shared) */
 .loading-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -498,7 +616,7 @@ a:hover {
 }
 
 .loading-card {
-    background-color: rgba(0, 0, 0, 0.2); /* Match video card background */
+    background-color: rgba(0, 0, 0, 0.2);
     border-radius: 0.5rem;
     padding: 1rem;
     animation: pulse 1.5s infinite ease-in-out;
@@ -506,49 +624,39 @@ a:hover {
 
 .loading-thumbnail {
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    background-color: #4a5568; /* Placeholder color */
+    padding-top: 56.25%;
+    background-color: #4a5568;
     border-radius: 0.375rem;
     margin-bottom: 1rem;
 }
 
 .loading-title {
     height: 1.5rem;
-    background-color: #4a5568; /* Placeholder color */
+    background-color: #4a5568;
     border-radius: 0.25rem;
     width: 75%;
     margin-bottom: 0.5rem;
 }
 
-.loading-description {
-    height: 1rem;
-    background-color: #2d3748; /* Placeholder color */
-    border-radius: 0.25rem;
-    width: 83.333%;
-}
-
 @keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
-/* No Results Styling */
+/* No Results Styling (Shared) */
 .no-results {
     text-align: center;
-    color: #a0aec0; /* Keep a muted color */
+    color: #a0aec0;
     padding: 3rem 0;
+    font-size: 1.1rem;
 }
 
-/* Modal Styling */
+/* Modal Styling (Shared) */
 .modal-overlay {
     position: fixed;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark semi-transparent background */
-    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.85);
+    z-index: 1050;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -564,17 +672,19 @@ a:hover {
 }
 
 .modal-content {
-    background-color: var(--dark-color); /* Use your site's dark color */
+    background-color: var(--dark-color);
     border-radius: 0.75rem;
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-    width: 70%; /* Use a relative width */
-    max-width: 1600px; /* Increased max-width slightly, adjust as needed */
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+    width: 90%;
+    max-width: 1200px;
     max-height: 90vh;
-    overflow-y: auto;
+    overflow: hidden;
     position: relative;
     transform: scale(0.8);
     transition: transform 0.3s ease-in-out;
-    color: var(--text-color); /* Ensure modal text uses site color */
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
 }
 
 .modal-overlay.visible .modal-content {
@@ -584,7 +694,8 @@ a:hover {
 .modal-video-container {
     position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    padding-top: 56.25%;
+    flex-shrink: 0;
 }
 
 .modal-video-container iframe {
@@ -594,58 +705,59 @@ a:hover {
     height: 100%;
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
+    border: none;
 }
 
 .modal-info {
     padding: 1.5rem;
+    overflow-y: auto;
+    flex-grow: 1;
 }
 
 .modal-info h2 {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     font-weight: 600;
-    margin-bottom: 0.5rem;
-    color: var(--text-color); /* Use your site's text color */
+    margin-bottom: 0.75rem;
+    color: var(--text-color);
 }
 
 .modal-info p {
     font-size: 1rem;
-    color: #a0aec0; /* Keep a slightly muted color for description */
+    color: #b0bec5;
+    line-height: 1.6;
 }
 
 .modal-close-btn {
     position: absolute;
-    top: 0rem;
-    right: 0rem;
-    background: none;
+    top: 0.5rem;
+    right: 0.5rem;
+    background: rgba(0,0,0,0.3);
     border: none;
-    color: #a0aec0; /* Muted color for the icon */
+    color: #e0e0e0;
     cursor: pointer;
     padding: 0.5rem;
     border-radius: 50%;
-    transition: color 0.2s ease-in-out;
-    z-index: 60; /* Ensure button is above video */
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    z-index: 1060;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .modal-close-btn:hover {
-    color: var(--highlight-color); /* Highlight on hover */
+    color: var(--highlight-color);
+    background-color: rgba(0,0,0,0.5);
 }
 
 .modal-close-btn svg {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
     fill: currentColor;
 }
 
 /* Prevent body scrolling when modal is open */
 body.overflow-hidden {
     overflow: hidden;
-}
-
-/* --- Responsive Adjustments --- */
-@media (min-width: 640px) {
-    /* Add any responsive styles needed for the gallery here */
-}
-
-@media (min-width: 1024px) {
-    /* Add any responsive styles needed for the gallery here */
 }
