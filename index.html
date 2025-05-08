@@ -148,7 +148,7 @@
                             <br><br>
                             I love games, films, dense atmospher and interdisciniplary work...
                             <br><br>
-                        <p>Feel free to contact me on social media or write me a mail!</p>
+                        <p>If you want to work together or have any questions, feel free to contact me on social media or write me a mail!</p>
                         <p>Email: <a href="mailto:info@alexejwieber.com">info@alexejwieber.com</a>
                         </p>
                     </div>
@@ -368,6 +368,13 @@
 
             requestAnimationFrame(() => {
                 targetPage.classList.add('active');
+
+                // Add a small delay for the explorative page to ensure layout is settled
+                if (targetId === 'explorative') {
+                    setTimeout(setContainerHeight, 50); // 50ms delay
+                } else {
+                    setContainerHeight(); // For other pages, set height immediately
+                }
             });
 
             navLinks.forEach(link => {
@@ -381,18 +388,16 @@
                 const topicsContainer = document.getElementById('video-topics-container');
                 if (!topicsContainer.children.length || topicsContainer.querySelector('.loading-card')) {
                     loadGameAudioData();
-                } else {
-                    setContainerHeight();
                 }
+                // Height for game-audio is handled in loadGameAudioData or the general setContainerHeight after rAF
             } else if (targetId === 'explorative') {
                 const explorativeContainer = document.getElementById('explorative-video-list-container');
                 if (!explorativeContainer.children.length) {
-                    loadExplorativeData();
-                } else {
-                    setContainerHeight();
+                    loadExplorativeData(); // loadExplorativeData will call setContainerHeight after rendering and image loads
                 }
+                // Height for explorative is handled in loadExplorativeData (on first load) or the setTimeout after rAF (on subsequent visits)
             } else {
-                setContainerHeight();
+                 // Height for other pages is handled by the general setContainerHeight after rAF
             }
         }
 
@@ -424,20 +429,15 @@
                 if (initialTargetId === 'game-audio') {
                     loadGameAudioData(); // loadGameAudioData calls setContainerHeight after rendering
                 } else if (initialTargetId === 'explorative') {
-                    loadExplorativeData(); // loadExplorativeData calls setContainerHeight after rendering
-                    // Add a small delay or requestAnimationFrame after loading data for initial load
-                    requestAnimationFrame(() => {
-                        requestAnimationFrame(() => { // Double rAF for extra safety
-                            setContainerHeight();
-                        });
-                    });
+                    // For the initial load of the explorative page, load the data.
+                    // setContainerHeight is called within loadExplorativeData after rendering and image loads.
+                    loadExplorativeData();
                 } else {
                     setContainerHeight(); // Call setContainerHeight for other pages immediately
                 }
 
                 // Reset position after initial height calculation if needed for transitions
-                // This might need adjustment depending on desired initial animation
-                // initialActivePage.style.position = ''; // Or 'absolute' if needed for transition out later
+                initialActivePage.style.position = ''; // Or 'absolute' if needed for transition out later
 
             } else {
                 // If no active page is found on load (shouldn't happen with default active class)
@@ -447,13 +447,16 @@
             // Recalculate height on window resize
             window.addEventListener('resize', setContainerHeight);
 
-            // Recalculate height if images within pages load
+            // Recalculate height if images within pages load (for pages other than explorative on initial load)
+            // Explorative images are handled within loadExplorativeData
             pages.forEach(page => {
-                page.querySelectorAll('img').forEach(img => {
-                    if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
-                });
+                 if (page.id !== 'page-explorative') { // Exclude explorative page here
+                    page.querySelectorAll('img').forEach(img => {
+                        if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
+                    });
+                 }
             });
-            // Specific image load listeners for profile images
+            // Specific image load listeners for profile images (these are not in explorative)
             if (homeProfileImage && !homeProfileImage.complete) homeProfileImage.addEventListener('load', setContainerHeight, { once: true });
             if (aboutProfileImage && !aboutProfileImage.complete) aboutProfileImage.addEventListener('load', setContainerHeight, { once: true });
 
@@ -463,34 +466,6 @@
             });
         });
 
-
-        // --- Initial Setup on Window Load ---
-        window.addEventListener('load', () => {
-            const initialActivePage = pageContainer.querySelector('.page.active');
-            if (initialActivePage) {
-                initialActivePage.style.position = 'relative';
-                const initialTargetId = initialActivePage.id.replace('page-', '');
-                if (initialTargetId === 'game-audio') loadGameAudioData();
-                else if (initialTargetId === 'explorative') loadExplorativeData();
-                else setContainerHeight();
-            } else {
-                setContainerHeight();
-            }
-
-            window.addEventListener('resize', setContainerHeight);
-
-            pages.forEach(page => {
-                page.querySelectorAll('img').forEach(img => {
-                    if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
-                });
-            });
-            if (homeProfileImage && !homeProfileImage.complete) homeProfileImage.addEventListener('load', setContainerHeight, { once: true });
-            if (aboutProfileImage && !aboutProfileImage.complete) aboutProfileImage.addEventListener('load', setContainerHeight, { once: true });
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', handleNavClick);
-            });
-        });
 
         // --- Video Gallery Logic ---
         const youtubeIframe = document.getElementById('youtube-iframe');
@@ -587,7 +562,7 @@
             }
             setContainerHeight();
             // Ensure to re-calculate height if images in any gallery load
-            document.querySelectorAll('.video-thumbnail img, .explorative-video-thumbnail img').forEach(img => {
+            document.querySelectorAll('.video-thumbnail img').forEach(img => {
                 if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
             });
         }
@@ -607,13 +582,38 @@
             if (explorativeData.videos.length > 0) {
                 if (noResultsEl) noResultsEl.style.display = 'none';
                 container.innerHTML = explorativeData.videos.map(video => createExplorativeVideoEntry(video)).join('');
+
+                const images = container.querySelectorAll('.explorative-video-thumbnail img');
+                let imagesLoadedCount = 0;
+                const totalImages = images.length;
+
+                if (totalImages === 0) {
+                    // No images, just set height after rendering
+                    setContainerHeight();
+                } else {
+                    images.forEach(img => {
+                        if (img.complete) {
+                            imagesLoadedCount++;
+                        } else {
+                            img.addEventListener('load', () => {
+                                imagesLoadedCount++;
+                                if (imagesLoadedCount === totalImages) {
+                                    setContainerHeight();
+                                }
+                            }, { once: true });
+                        }
+                    });
+
+                    // Check if all images were already complete
+                    if (imagesLoadedCount === totalImages) {
+                        setContainerHeight();
+                    }
+                }
+
             } else {
                 if (noResultsEl) noResultsEl.style.display = 'block';
+                 setContainerHeight(); // Call setContainerHeight even if no videos to adjust height
             }
-            setContainerHeight();
-            container.querySelectorAll('.explorative-video-thumbnail img').forEach(img => {
-                if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
-            });
         }
 
         function openModal(video) {
