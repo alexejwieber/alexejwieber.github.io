@@ -268,18 +268,21 @@
                     "id": "exp-project-1",
                     "youtubeId": "Hm41KoRnL9Q",
                     "title": "Monuments of Division (2024)",
-                    "description": "Photography by <a href='https://www.michael-hinz.net/' target='_blank'>Michael Hinz</a>."
+                    "genre": "Sound Collage",
+                    "description": "This work is based on a photography series by <a href='https://www.michael-hinz.net/' target='_blank'>Michael Hinz</a>, which documents fragments of divided Germany and the iron curtain. The visuals inspired me to go for a sound focused contrast with little musical elements. The collage includes daily snippets from city and nature soundscape recordings, as well as raw material textures."
                 },
                 {
                     "id": "exp-project-2",
                     "youtubeId": "JCDqvzKDb3s",
                     "title": "Panopt/sonicon (2021)",
+                     "genre": "Interactive Audiovisual Playground",
                     "description": "Among other things this project was inspired by the artificial synchronicity of our perception that is processing our sonic and visual surroundings and how it connects them to an audiovisual experience. Our sonic perception influences the way how we see things and vice versa. Depending on time changes we perceive some phenomena as connected or as serperate on the other hand. Every room in the game explores a slightly different narrative or theme."
                 },
                 {
                     "id": "exp-project-3",
                     "youtubeId": "6V8D7Eaq1OA",
                     "title": "Klanggewebe Iteration II (2018)",
+                    "genre": "Visual Algorithmic Composition",
                     "description": "The idea behind this work developed out of the question how visual structures can be transformed into auditive output. Plants grow depending on certain rules and with specific patterns. Following this idea, the growing instructions of Klanggewebe are being algorithmically generated in PureData, which sends this information to the visual software sequencer IanniX. IanniX sends, depending on its appearance structure, data out again to control virtual software instruments, electronic sounds and samples. The sound gets routed between 4 channels in the room, depending on the changing visual focus. The project was realized 2018 in collaboration with Ives Schachtschabel."
                 }
             ]
@@ -484,8 +487,8 @@
         let isLoadingGameAudio = false;
 
         function createGameAudioVideoCard(video, topic) {
-            // Corrected YouTube thumbnail URL - Using hqdefault.jpg for higher quality
-            const thumbnailUrl = `http://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+            // Corrected YouTube thumbnail URL
+            const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
             const fallbackThumbnailUrl = `https://placehold.co/320x180/2d3748/a0aec0?text=No+Image`;
             // Ensure alt text is added to the thumbnail image
             const videoInfoHtml = topic.showText ? `<div class="video-info"><h3>${video.title || ''}</h3></div>` : '';
@@ -500,8 +503,8 @@
         }
 
         function createExplorativeVideoEntry(video) {
-            // Corrected YouTube thumbnail URL - Using hqdefault.jpg for higher quality
-            const thumbnailUrl = `http://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
+            // Corrected YouTube thumbnail URL
+            const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
             const fallbackThumbnailUrl = `https://placehold.co/360x203/2d3748/a0aec0?text=No+Image`;
             // Ensure alt text is added to the thumbnail image
             return `
@@ -512,6 +515,7 @@
                     </div>
                     <div class="explorative-video-info">
                         <h3>${video.title}</h3>
+                        ${video.genre ? `<span class="explorative-video-genre">${video.genre}</span>` : ''}
                         <p>${video.description}</p>
                     </div>
                 </div>`;
@@ -631,18 +635,23 @@
             youtubeIframe.src = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?vq=hd1080&autoplay=1`;
 
             if (video.galleryType === 'explorative') {
-                modalTitle.textContent = video.title || ''; // Set title for explorative videos
-                modalDescription.innerHTML = video.description || ''; // Use innerHTML to render HTML tags in description
+                // Set modal content for explorative videos including genre
+                modalInfoContainer.innerHTML = `
+                    <h2>${video.title || ''}</h2>
+                    ${video.genre ? `<span class="modal-video-genre">${video.genre}</span>` : ''}
+                    <p>${video.description || ''}</p>
+                `;
                 modalInfoContainer.style.display = 'block';
             } else if (video.galleryType === 'game-audio') {
                 if (video.topicShowText && video.title && video.description) { // Only show info if title and description exist and showText is true
-                    modalTitle.textContent = video.title;
-                    modalDescription.innerHTML = video.description; // Use innerHTML
+                    modalInfoContainer.innerHTML = `
+                        <h2>${video.title || ''}</h2>
+                        <p>${video.description || ''}</p>
+                    `;
                     modalInfoContainer.style.display = 'block';
                 } else {
                     // Hide the info container if no title/description or showText is false
-                    modalTitle.textContent = '';
-                    modalDescription.textContent = '';
+                    modalInfoContainer.innerHTML = ''; // Clear content
                     modalInfoContainer.style.display = 'none';
                 }
             }
@@ -655,8 +664,7 @@
             youtubeIframe.src = '';
             modalOverlay.classList.remove('visible');
             document.body.classList.remove('overflow-hidden');
-            modalTitle.textContent = '';
-            modalDescription.textContent = ''; // Reset with textContent to clear potential HTML
+            modalInfoContainer.innerHTML = ''; // Clear content
             modalInfoContainer.style.display = 'block'; // Show info container by default when closed
         }
 
