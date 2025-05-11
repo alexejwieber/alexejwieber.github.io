@@ -84,7 +84,7 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-youtube" viewBox="0 0 16 16">
                                 <path
-                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
+                                    d="M8.051 1.999h.089c.822.003 4.987.033 6.11.335a2.01 2.01 0 0 1 1.415 1.42c.101.38.172.883.22 1.402l.01.104.022.26.008.104c.065.914.073 1.77.074 1.957v.075c-.001.194-.01 1.108-.082 2.06l-.008.105-.009.104c-.05.572-.124 1.14-.235 1.558a2.01 2.01 0 0 1-1.415 1.42c-1.16.312-5.569.334-6.18.335h-.142c-.309 0-1.587-.006-2.927-.052l-.17-.006-.087-.004-.171-.007-.171-.007c-1.11-.049-2.167-.128-2.654-.26a2.01 2.01 0 0 1-1.415-1.419c-.111-.417-.185-.986-.235-1.558L.09 9.82l-.008-.104A31 31 0 0 1 0 7.68v-.123c.002-.215.01-.958.064-1.778l.007-.103.003-.052.008-.104.022-.26.01-.104c.048-.519.119-1.023.22-1.402a2.01 2.01 0 0 1 1.415-1.42c.487-.13 1.544-.21 2.654-.26l.17-.007.172-.006.086-.003.171-.007A100 100 0 0 1 7.858 2zM6.4 5.209v4.818l4.157-2.408z" />
                             </svg>
                         </a>
                     </li>
@@ -94,25 +94,32 @@
 
         <div class="page-container relative">
             <div id="page-home" class="page active">
-                <h2 class="page-title">Hey, I'm Alexej! (WIP)</h2>
-                <div class="about-section-home">
-                    <div class="about-text">
-                        <p>I'm a dedicated Game Audio Designer with experience creating immersive soundscapes and implementing audio systems for video games.</p>
-                    </div>
-                    <div class="about-image">
-                        <img src="images/profile_round.png" alt="Alexej Wieber - Game Audio Designer Profile Picture" id="home-profile-image">
+                <div class="hero-section">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Alexej Wieber</h1>
+                        <p class="hero-subtitle">Game Audio | Sound Design | Field Recording | Editing & Mixing</p>
+                        <p class="hero-intro">Designing audio with intention — I’m passionate about game sound that not only enhances emotion but responds to interaction. From expressive detail to systemic thinking, I create thoughtful sound for responsive worlds that serve and elevate gameplay.</p>
+                        <div class="hero-image-container">
+                             <img src="images/profile_round.png" alt="Alexej Wieber - Game Audio Designer Profile Picture" id="home-profile-image" class="hero-profile-image">
+                        </div>
+                        <a href="#game-audio" class="cta-button nav-link" data-target="game-audio">View My Work</a>
                     </div>
                 </div>
 
-                <div class="home-video-showcase-container">
-                    <div class="video-card home-page-video-card" data-id="home-showcase-video-1">
-                        <div class="video-thumbnail">
-                            <img src="https://img.youtube.com/vi/G4DG_mKhaZc/hqdefault.jpg" alt="Showcase Video Thumbnail" onerror="this.onerror=null; this.src='https://placehold.co/640x360/2d3748/a0aec0?text=Video+Preview+Not+Available';">
-                            <div class="play-icon-overlay">▶</div>
+                <hr class="home-divider">
+
+                <div class="featured-video-section">
+                    <h2 class="home-section-title">Showreel</h2>
+                    <div class="home-video-showcase-container">
+                        <div class="video-card home-page-video-card" data-id="home-showcase-video-1">
+                            <div class="video-thumbnail">
+                                <img src="https://img.youtube.com/vi/G4DG_mKhaZc/hqdefault.jpg" alt="Showreel Video Thumbnail" onerror="this.onerror=null; this.src='https://placehold.co/640x360/2d3748/a0aec0?text=Video+Preview+Not+Available';">
+                                <div class="play-icon-overlay">▶</div>
+                            </div>
                         </div>
-                        </div>
+                    </div>
                 </div>
-                </div>
+            </div>
 
             <div id="page-game-audio" class="page">
                 <h2 class="page-title">GAME AUDIO (WIP)</h2>
@@ -125,6 +132,8 @@
                     <br><br>
                     As part of my work I also closely collaborated with Audio Programmers to test and develop new audio
                     technology systems like proprietary sound propagation and other third-party spatial audio solutions.
+                    <br><br>
+                    An extended portfolio of my game audio work is available upon request. Please reach out via email if you’re interested.
                 </p>
                 <div id="video-topics-container">
                 </div>
@@ -146,8 +155,7 @@
 
             <div id="page-about" class="page">
                  <h2 class="page-title">ABOUT (WIP)</h2>
-                <div class="about-section-home">
-                    <div class="about-text">
+                <div class="about-section-home"> <div class="about-text">
                         <p>For a long time now, I have had a deep passion for interactive applications and complex
                             systems such
                             as video games. I see them as a relatively young branch of art, with untapped potential
@@ -262,10 +270,10 @@
             "showText": true,
             "videos": [
                 { "id": "sd-example-1", "title": "Colorado Ambience", "youtubeId": "iH0MiWKPqy4", "description": "I had the pleasure to design and implement the ambience soundscape for three different times of day on Hunt’s 4th map Mammon's Gulch.They each consist of one main ambisonics bed layer and a number of one- shots triggering at varying times." },
-                { "id": "sd-example-2", "title": "Weapon: Chu Ko Nu", "youtubeId": "jZSkwPpM40k", "description": "This chinese ancient repeating crossbow was an interesting desing challenge because of so little reference material. Besides the main shot, the foley for the different moving parts and the reloading mechanism was especially fun to work on." },
-                { "id": "sd-example-3", "title": "Trait: Poltergeist", "youtubeId": "CKvGBRxzL-c", "description": "A supernatural design for this special ability, which allows the player to interact with objects like doors via Hunt's Darksight remotely." },
-                { "id": "sd-example-4", "title": "Trait: Blademancer", "youtubeId": "FIL93TBVztg", "description": "This trait allows the player to retrieve throwable items from the distance. The supernatural sound design is a combination of a 2D oneshot and a positioned effect on the retrieved object itself." },
                 { "id": "sd-example-5", "title": "Character Animation", "youtubeId": "1JkaUGANt7Y", "description": "A combination of foley and... " },
+                { "id": "sd-example-3", "title": "Trait: Poltergeist", "youtubeId": "CKvGBRxzL-c", "description": "A supernatural design for this special ability, which allows the player to interact with objects like doors via Hunt's Darksight remotely." },
+                { "id": "sd-example-2", "title": "Weapon: Chu Ko Nu", "youtubeId": "jZSkwPpM40k", "description": "This chinese ancient repeating crossbow was an interesting desing challenge because of so little reference material. Besides the main shot, the foley for the different moving parts and the reloading mechanism was especially fun to work on." },
+                { "id": "sd-example-4", "title": "Trait: Blademancer", "youtubeId": "FIL93TBVztg", "description": "This trait allows the player to retrieve throwable items from the distance. The supernatural sound design is a combination of a 2D oneshot and a positioned effect on the retrieved object itself." },
                 { "id": "sd-example-6", "title": "Ambience Details", "youtubeId": "Z4737DRB6xI", "description": "I designed sounds for multiple different ambience... " },
                 { "id": "sd-example-7", "title": "Cornfield Ambience", "youtubeId": "ln9ZfN21X-k", "description": "This ambisonics plays on top of the global map ambience. To make the soundfield slightly positional when standing outside, the spread is connected to the distance in the attenuation." },
                 { "id": "sd-example-8", "youtubeId": "3C6BPFyQpiU", "title": "Bats", "description": "..." }
@@ -301,11 +309,11 @@
 
     <script>
         // DOM Element References
-        const navLinks = document.querySelectorAll('.nav-link'); // All navigation links including home
+        const navLinks = document.querySelectorAll('.nav-link');
         const pages = document.querySelectorAll('.page');
         const pageContainer = document.querySelector('.page-container');
         const modalOverlay = document.getElementById('video-modal-overlay');
-        const homeProfileImage = document.getElementById('home-profile-image');
+        const homeProfileImage = document.getElementById('home-profile-image'); // This ID is now on the hero image
         const aboutProfileImage = document.getElementById('about-profile-image');
         const videoDataScript = document.getElementById('video-data');
         const hamburgerMenu = document.querySelector('.hamburger-menu');
@@ -343,10 +351,9 @@
             }
         }
 
-        // Add the new home page showcase video to allVideos
         allVideos.push({
             id: "home-showcase-video-1",
-            youtubeId: "G4DG_mKhaZc", // This is the example ID, ensure it's correct for the desired video
+            youtubeId: "G4DG_mKhaZc",
             galleryType: 'game-audio',
             topicShowText: false
         });
@@ -366,10 +373,8 @@
             const targetPage = document.getElementById(`page-${targetId}`);
             const currentPage = pageContainer.querySelector('.page.active');
 
-            // Always scroll to top smoothly, even if clicking the active page's link
             window.scrollTo({ top: 0, behavior: 'smooth' });
 
-            // If the target page is not the current page, then proceed with page transition
             if (targetPage && targetPage !== currentPage) {
                 if (modalOverlay.classList.contains('visible')) closeModal();
 
@@ -399,7 +404,7 @@
 
                 requestAnimationFrame(() => {
                     targetPage.classList.add('active');
-                    setContainerHeight(); // Set height after new page is active and rendered
+                    setContainerHeight();
                 });
 
                 navLinks.forEach(link => {
@@ -408,6 +413,16 @@
                         link.classList.add('is-active');
                     }
                 });
+                // Special handling for CTA button if it's clicked
+                if(event.currentTarget.classList.contains('cta-button')) {
+                    // Ensure the corresponding nav link in the main nav is also activated
+                    document.querySelector(`.site-nav .nav-link[data-target="${targetId}"]`).classList.add('is-active');
+                     // And deactivate the home link if we are navigating away from home via CTA
+                    if (targetId !== 'home') {
+                         document.getElementById('home-link').classList.remove('is-active');
+                    }
+                }
+
 
                 if (targetId === 'game-audio') {
                     const topicsContainer = document.getElementById('video-topics-container');
@@ -421,7 +436,6 @@
                     }
                 }
             } else if (!targetPage) {
-                // Handle case where targetPage is null (should not happen with valid data-target attributes)
                 console.warn("Target page not found for ID:", targetId);
             }
         }
@@ -447,18 +461,13 @@
             if (initialActivePage) {
                 initialActivePage.style.position = 'relative';
                 initialActivePage.style.display = 'block';
-
                 const initialTargetId = initialActivePage.id.replace('page-', '');
 
-                if (initialTargetId === 'game-audio') {
-                    loadGameAudioData();
-                } else if (initialTargetId === 'explorative') {
-                    loadExplorativeData();
-                } else {
-                    setContainerHeight();
-                }
+                if (initialTargetId === 'game-audio') loadGameAudioData();
+                else if (initialTargetId === 'explorative') loadExplorativeData();
+                else setContainerHeight();
+                
                 initialActivePage.style.position = '';
-
             } else {
                 setContainerHeight();
             }
@@ -466,12 +475,13 @@
             window.addEventListener('resize', setContainerHeight);
 
             pages.forEach(page => {
-                 if (page.id !== 'page-explorative') { // Explorative images are handled in its own load function
-                    page.querySelectorAll('img').forEach(img => {
+                 if (page.id !== 'page-explorative') {
+                    page.querySelectorAll('img:not(.hero-profile-image)').forEach(img => { // Exclude hero image from this generic listener
                         if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
                     });
                  }
             });
+            // Specific listeners for images that might affect initial height significantly
             if (homeProfileImage && !homeProfileImage.complete) homeProfileImage.addEventListener('load', setContainerHeight, { once: true });
             if (aboutProfileImage && !aboutProfileImage.complete) aboutProfileImage.addEventListener('load', setContainerHeight, { once: true });
             
@@ -480,10 +490,12 @@
                 homeShowcaseImg.addEventListener('load', setContainerHeight, { once: true });
             }
 
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', handleNavClick);
-            });
+            navLinks.forEach(link => link.addEventListener('click', handleNavClick));
+            // Add event listener for the new CTA button on the home page
+            const ctaButton = document.querySelector('#page-home .cta-button');
+            if (ctaButton) {
+                ctaButton.addEventListener('click', handleNavClick);
+            }
         });
 
 
@@ -491,12 +503,9 @@
         const youtubeIframe = document.getElementById('youtube-iframe');
         const modalInfoContainer = document.getElementById('modal-info');
         const modalCloseBtn = document.getElementById('modal-close-btn');
-
-
         let isLoadingGameAudio = false;
 
         function createGameAudioVideoCard(video, topic) {
-            // Corrected YouTube thumbnail URL format
             const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
             const fallbackThumbnailUrl = `https://placehold.co/320x180/2d3748/a0aec0?text=No+Image`;
             const videoInfoHtml = topic.showText ? `<div class="video-info"><h3>${video.title || ''}</h3></div>` : '';
@@ -511,7 +520,6 @@
         }
 
         function createExplorativeVideoEntry(video) {
-            // Corrected YouTube thumbnail URL format
             const thumbnailUrl = `https://img.youtube.com/vi/${video.youtubeId}/hqdefault.jpg`;
             const fallbackThumbnailUrl = `https://placehold.co/360x203/2d3748/a0aec0?text=No+Image`;
             return `
@@ -528,7 +536,6 @@
                 </div>`;
         }
 
-
         function createLoadingPlaceholders(count) {
             return Array(count).fill(`
                 <div class="loading-card">
@@ -541,46 +548,26 @@
             const container = document.getElementById('video-topics-container');
             const noResultsEl = document.getElementById('no-results');
             if (!container) return;
-
             container.innerHTML = '';
             if (noResultsEl) noResultsEl.style.display = 'none';
 
             if (isLoadingGameAudio) {
-                Object.keys(data)
-                    .filter(key => key !== 'explorative-projects')
-                    .forEach(topicId => {
-                        const topic = data[topicId];
-                        container.innerHTML += `
-                            <div class="topic-section">
-                                <h2 class="topic-title">${topic.title}</h2>
-                                <div class="video-grid">
-                                    ${createLoadingPlaceholders(topic.videos.length > 0 ? topic.videos.length : 3)}
-                                </div>
-                            </div>`;
-                    });
-                setContainerHeight();
-                return;
-            }
-
-            let totalVideosRendered = 0;
-            Object.keys(data)
-                .filter(key => key !== 'explorative-projects')
-                .forEach(topicId => {
+                Object.keys(data).filter(key => key !== 'explorative-projects').forEach(topicId => {
                     const topic = data[topicId];
-                    if (topic.videos && topic.videos.length > 0) {
-                        totalVideosRendered += topic.videos.length;
-                        const videoGridHtml = topic.videos.map(video => createGameAudioVideoCard(video, topic)).join('');
-                        container.innerHTML += `
-                            <div class="topic-section">
-                                <h2 class="topic-title">${topic.title}</h2>
-                                <div class="video-grid">${videoGridHtml}</div>
-                            </div>`;
-                    }
+                    container.innerHTML += `<div class="topic-section"><h2 class="topic-title">${topic.title}</h2><div class="video-grid">${createLoadingPlaceholders(topic.videos.length > 0 ? topic.videos.length : 3)}</div></div>`;
                 });
-
-            if (totalVideosRendered === 0 && noResultsEl) {
-                noResultsEl.style.display = 'block';
+                setContainerHeight(); return;
             }
+            let totalVideosRendered = 0;
+            Object.keys(data).filter(key => key !== 'explorative-projects').forEach(topicId => {
+                const topic = data[topicId];
+                if (topic.videos && topic.videos.length > 0) {
+                    totalVideosRendered += topic.videos.length;
+                    const videoGridHtml = topic.videos.map(video => createGameAudioVideoCard(video, topic)).join('');
+                    container.innerHTML += `<div class="topic-section"><h2 class="topic-title">${topic.title}</h2><div class="video-grid">${videoGridHtml}</div></div>`;
+                }
+            });
+            if (totalVideosRendered === 0 && noResultsEl) noResultsEl.style.display = 'block';
             setContainerHeight();
             document.querySelectorAll('#video-topics-container .video-thumbnail img').forEach(img => {
                 if (!img.complete) img.addEventListener('load', setContainerHeight, { once: true });
@@ -591,72 +578,44 @@
             const container = document.getElementById('explorative-video-list-container');
             const noResultsEl = document.getElementById('no-explorative-results');
             const explorativeData = videoTopics['explorative-projects'];
-
             if (!container || !explorativeData || !explorativeData.videos) {
                 if (noResultsEl) noResultsEl.style.display = 'block';
-                setContainerHeight();
-                return;
+                setContainerHeight(); return;
             }
-
             container.innerHTML = '';
             if (explorativeData.videos.length > 0) {
                 if (noResultsEl) noResultsEl.style.display = 'none';
                 container.innerHTML = explorativeData.videos.map(video => createExplorativeVideoEntry(video)).join('');
-
                 const images = container.querySelectorAll('.explorative-video-thumbnail img');
-                let imagesLoadedCount = 0;
-                const totalImages = images.length;
-
-                if (totalImages === 0) {
-                    setContainerHeight();
-                } else {
+                let imagesLoadedCount = 0; const totalImages = images.length;
+                if (totalImages === 0) setContainerHeight();
+                else {
                     images.forEach(img => {
-                        if (img.complete) {
-                            imagesLoadedCount++;
-                        } else {
-                            img.addEventListener('load', () => {
-                                imagesLoadedCount++;
-                                if (imagesLoadedCount === totalImages) {
-                                    setContainerHeight();
-                                }
-                            }, { once: true });
-                        }
+                        if (img.complete) imagesLoadedCount++;
+                        else img.addEventListener('load', () => { imagesLoadedCount++; if (imagesLoadedCount === totalImages) setContainerHeight(); }, { once: true });
                     });
-                    if (imagesLoadedCount === totalImages && totalImages > 0) {
-                        setContainerHeight();
-                    }
+                    if (imagesLoadedCount === totalImages && totalImages > 0) setContainerHeight();
                 }
-
             } else {
                 if (noResultsEl) noResultsEl.style.display = 'block';
-                 setContainerHeight();
+                setContainerHeight();
             }
         }
 
         function openModal(video) {
             youtubeIframe.src = `https://www.youtube-nocookie.com/embed/${video.youtubeId}?vq=hd1080&autoplay=1`;
-
             if (video.galleryType === 'explorative') {
-                modalInfoContainer.innerHTML = `
-                    <h2>${video.title || ''}</h2>
-                    ${video.genre ? `<span class="modal-video-genre">${video.genre}</span>` : ''}
-                    <p>${video.description || ''}</p>
-                `;
+                modalInfoContainer.innerHTML = `<h2>${video.title || ''}</h2>${video.genre ? `<span class="modal-video-genre">${video.genre}</span>` : ''}<p>${video.description || ''}</p>`;
                 modalInfoContainer.style.display = 'block';
             } else if (video.galleryType === 'game-audio') {
                 if (video.topicShowText && video.title && video.description) {
-                    modalInfoContainer.innerHTML = `
-                        <h2>${video.title || ''}</h2>
-                        <p>${video.description || ''}</p>
-                    `;
+                    modalInfoContainer.innerHTML = `<h2>${video.title || ''}</h2><p>${video.description || ''}</p>`;
                     modalInfoContainer.style.display = 'block';
                 } else {
-                    modalInfoContainer.innerHTML = '';
-                    modalInfoContainer.style.display = 'none';
+                    modalInfoContainer.innerHTML = ''; modalInfoContainer.style.display = 'none';
                 }
             } else {
-                modalInfoContainer.innerHTML = '';
-                modalInfoContainer.style.display = 'none';
+                modalInfoContainer.innerHTML = ''; modalInfoContainer.style.display = 'none';
             }
             modalOverlay.classList.add('visible');
             document.body.classList.add('overflow-hidden');
@@ -679,30 +638,17 @@
             }
         });
 
-        modalOverlay.addEventListener('click', (event) => {
-            if (event.target === modalOverlay) closeModal();
-        });
+        modalOverlay.addEventListener('click', (event) => { if (event.target === modalOverlay) closeModal(); });
         modalCloseBtn.addEventListener('click', closeModal);
 
         function loadGameAudioData() {
-            if (isLoadingGameAudio) return;
-            isLoadingGameAudio = true;
-            const gameAudioTopicsOnly = Object.keys(videoTopics)
-                .filter(key => key !== 'explorative-projects')
-                .reduce((obj, key) => {
-                    obj[key] = videoTopics[key];
-                    return obj;
-                }, {});
+            if (isLoadingGameAudio) return; isLoadingGameAudio = true;
+            const gameAudioTopicsOnly = Object.keys(videoTopics).filter(key => key !== 'explorative-projects').reduce((obj, key) => { obj[key] = videoTopics[key]; return obj; }, {});
             renderGameAudioVideos(gameAudioTopicsOnly);
-            setTimeout(() => {
-                isLoadingGameAudio = false;
-                renderGameAudioVideos(gameAudioTopicsOnly);
-            }, 500);
+            setTimeout(() => { isLoadingGameAudio = false; renderGameAudioVideos(gameAudioTopicsOnly); }, 500);
         }
 
-        function loadExplorativeData() {
-            renderExplorativeVideos();
-        }
+        function loadExplorativeData() { renderExplorativeVideos(); }
     </script>
 </body>
 
