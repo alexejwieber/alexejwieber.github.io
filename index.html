@@ -237,7 +237,7 @@
     </div>
 
     <footer id="footer">
-        <p>© 2025 Alexej Wieber. All rights reserved.</p>
+        <p>© <span id="current-year"></span> Alexej Wieber. All rights reserved.</p>
     </footer>
 
     <div id="video-modal-overlay" class="modal-overlay">
@@ -335,6 +335,7 @@
         const hamburgerMenu = document.querySelector('.hamburger-menu');
         const navMenuCollapsible = document.getElementById('navMenuCollapsible');
         const allPageNavLinksInMenu = document.querySelectorAll('#navMenuCollapsible .nav-links-list .nav-link');
+        const currentYearSpan = document.getElementById('current-year'); // Get the span element
 
 
         // Video Data Initialization
@@ -474,6 +475,11 @@
 
         // --- Initial Setup on Window Load ---
         window.addEventListener('load', () => {
+             // Set the current year in the footer
+            if (currentYearSpan) {
+                currentYearSpan.textContent = new Date().getFullYear();
+            }
+
             const initialActivePage = pageContainer.querySelector('.page.active');
             if (initialActivePage) {
                 initialActivePage.style.position = 'relative';
