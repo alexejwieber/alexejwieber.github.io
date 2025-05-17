@@ -11,13 +11,15 @@
     --title-color: #13968b; /* General topic title color */
     --nav-height: 60px;
     --transition-time: 0.16s;
+    --headline-1: #ca5a38;
+    --headline-2: #0268a1;
 }
 
 /* Page specific heading colors for main page titles */
 /* #page-home .page-title was removed as we use hero-title now */
-#page-game-audio .page-title  { color: #ca5a38; }
-#page-explorative .page-title { color: #0268a1; }
-#page-about .page-title       { color: #ca5a38; }
+#page-game-audio .page-title  { color: var(--headline-1); }
+#page-explorative .page-title { color: var(--headline-2); }
+#page-about .page-title       { color: var(--headline-1); }
 
 
 /* Font */
