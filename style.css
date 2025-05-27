@@ -295,14 +295,14 @@ a:hover { color: var(--highlight-color); text-decoration-color: var(--highlight-
     margin-bottom: 2rem;
 }
 .hero-image-container {
-    margin-bottom: 2rem;
+    margin-bottom: 0rem;
     display: flex;
     justify-content: center;
 }
 
 .hero-profile-image {
-    width: 300px; /* Slightly larger profile image */
-    height: 300px;
+    width: 200px; /* Slightly larger profile image */
+    height: 200px;
     border-radius: 50%; /* Make it circular */
     object-fit: cover;
     border: 4px solid var(--highlight-color); /* Add a highlight border */
